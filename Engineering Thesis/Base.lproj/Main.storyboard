@@ -76,7 +76,7 @@
         <!--Wykładowca-->
         <scene sceneID="EnK-a0-Gyb">
             <objects>
-                <viewController id="SBq-dp-mWS" sceneMemberID="viewController">
+                <viewController id="SBq-dp-mWS" customClass="MainTeacherViewController" customModule="Engineering_Thesis" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4Xg-Pc-eOH"/>
                         <viewControllerLayoutGuide type="bottom" id="uQz-6O-B2f"/>
@@ -97,6 +97,9 @@
                                         <state key="normal" title="Lista pytań" backgroundImage="green_button">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressedButtons:" destination="SBq-dp-mWS" eventType="touchUpInside" id="mUD-IV-UbC"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Hb-az-444">
                                         <rect key="frame" x="0.0" y="74" width="260" height="54"/>
@@ -122,6 +125,9 @@
                     <navigationItem key="navigationItem" title="Wykładowca" id="tFf-56-p7D">
                         <barButtonItem key="backBarButtonItem" title="Powrót" id="fh4-dg-bPR"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="wy8-0V-Iub" kind="show" identifier="Show Questions" id="3E2-8P-axH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L0z-XA-dIU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -196,7 +202,7 @@
                     <navigationBar key="navigationBar" alpha="0.0" contentMode="scaleToFill" misplaced="YES" id="hcV-k1-Xp1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.27348947530000001" green="0.56393063070000005" blue="0.55773502590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         </textAttributes>
