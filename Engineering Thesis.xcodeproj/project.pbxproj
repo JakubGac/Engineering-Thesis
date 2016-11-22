@@ -7,27 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		272211D31DE4C02B003B2266 /* Engineering_Thesis.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 272211D21DE4C02B003B2266 /* Engineering_Thesis.xcdatamodel */; };
+		27C127051DDFAA66004C56FB /* QuestionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C127041DDFAA66004C56FB /* QuestionsTableViewController.swift */; };
 		27E459D21DDDC56C006099F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E459D11DDDC56C006099F4 /* AppDelegate.swift */; };
 		27E459D71DDDC56C006099F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27E459D51DDDC56C006099F4 /* Main.storyboard */; };
-		27E459DA1DDDC56C006099F4 /* Engineering_Thesis.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27E459D81DDDC56C006099F4 /* Engineering_Thesis.xcdatamodeld */; };
 		27E459DF1DDDC56C006099F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27E459DD1DDDC56C006099F4 /* LaunchScreen.storyboard */; };
 		27E459E91DDDC62C006099F4 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E459E81DDDC62C006099F4 /* MainMenuViewController.swift */; };
 		27E459EC1DDDD6BE006099F4 /* MainTeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E459EB1DDDD6BE006099F4 /* MainTeacherViewController.swift */; };
 		27E459EF1DDDD6DF006099F4 /* MainStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E459EE1DDDD6DF006099F4 /* MainStudentViewController.swift */; };
 		27E459F41DDE435A006099F4 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27E459F31DDE435A006099F4 /* Media.xcassets */; };
+		27F13DB31DDFBF12006C5E11 /* AddQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F13DB21DDFBF12006C5E11 /* AddQuestionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		272211D21DE4C02B003B2266 /* Engineering_Thesis.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Engineering_Thesis.xcdatamodel; sourceTree = "<group>"; };
+		27C127041DDFAA66004C56FB /* QuestionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsTableViewController.swift; sourceTree = "<group>"; };
 		27E459CE1DDDC56C006099F4 /* Engineering Thesis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Engineering Thesis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E459D11DDDC56C006099F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27E459D61DDDC56C006099F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		27E459D91DDDC56C006099F4 /* Engineering_Thesis.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Engineering_Thesis.xcdatamodel; sourceTree = "<group>"; };
 		27E459DE1DDDC56C006099F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27E459E01DDDC56C006099F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27E459E81DDDC62C006099F4 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		27E459EB1DDDD6BE006099F4 /* MainTeacherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTeacherViewController.swift; sourceTree = "<group>"; };
 		27E459EE1DDDD6DF006099F4 /* MainStudentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainStudentViewController.swift; sourceTree = "<group>"; };
 		27E459F31DDE435A006099F4 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		27F13DB21DDFBF12006C5E11 /* AddQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddQuestionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +88,7 @@
 		27E459E71DDDC5DF006099F4 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				27E459D81DDDC56C006099F4 /* Engineering_Thesis.xcdatamodeld */,
+				272211D21DE4C02B003B2266 /* Engineering_Thesis.xcdatamodel */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -100,6 +104,8 @@
 		27E459ED1DDDD6C6006099F4 /* Teacher */ = {
 			isa = PBXGroup;
 			children = (
+				27F13DB21DDFBF12006C5E11 /* AddQuestionViewController.swift */,
+				27C127041DDFAA66004C56FB /* QuestionsTableViewController.swift */,
 				27E459EB1DDDD6BE006099F4 /* MainTeacherViewController.swift */,
 			);
 			name = Teacher;
@@ -186,10 +192,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				27E459E91DDDC62C006099F4 /* MainMenuViewController.swift in Sources */,
-				27E459DA1DDDC56C006099F4 /* Engineering_Thesis.xcdatamodeld in Sources */,
+				27C127051DDFAA66004C56FB /* QuestionsTableViewController.swift in Sources */,
 				27E459EC1DDDD6BE006099F4 /* MainTeacherViewController.swift in Sources */,
 				27E459EF1DDDD6DF006099F4 /* MainStudentViewController.swift in Sources */,
+				27F13DB31DDFBF12006C5E11 /* AddQuestionViewController.swift in Sources */,
 				27E459D21DDDC56C006099F4 /* AppDelegate.swift in Sources */,
+				272211D31DE4C02B003B2266 /* Engineering_Thesis.xcdatamodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,21 +361,9 @@
 				27E459E51DDDC56C006099F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		27E459D81DDDC56C006099F4 /* Engineering_Thesis.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				27E459D91DDDC56C006099F4 /* Engineering_Thesis.xcdatamodel */,
-			);
-			currentVersion = 27E459D91DDDC56C006099F4 /* Engineering_Thesis.xcdatamodel */;
-			path = Engineering_Thesis.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 27E459C61DDDC56B006099F4 /* Project object */;
 }
