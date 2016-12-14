@@ -17,13 +17,14 @@ class MainTeacherViewController: UIViewController {
         static let startExamButton = "Rozpocznij egzamin"
     }
     
+    // MARK: - Navigation
     @IBAction func pressedButtons(_ sender: UIButton) {
         if let buttonText = sender.currentTitle {
             if buttonText == Storyboard.questionsButton {
                 performSegue(withIdentifier: Storyboard.ShowQuestionsSegue, sender: sender)
             } else {
                 if buttonText == Storyboard.startExamButton {
-                    
+                    performSegue(withIdentifier: Storyboard.StartExamSeque, sender: sender)
                 } else {
                     printAlert(alertMessage: "Brak przejścia w bazie dla podanego tytułu przycisku")
                 }

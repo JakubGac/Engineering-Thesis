@@ -4,6 +4,34 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>Engineering Thesis</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string></string>
+			</array>
+			<key>CFBundleTypeIconFiles</key>
+			<array>
+				<string>questionicon_22.png</string>
+				<string>questionicon_44.png</string>
+				<string>questionicon_64.png</string>
+				<string>questionicon_320.png</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>Question List Document</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.JG.questionlist.qslt</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -38,6 +66,26 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UTExportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Question List Document</string>
+			<key>UTTypeIdentifier</key>
+			<string>com.JG.questionlist.qslt</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<string>qslt</string>
+				<key>public.mime-type</key>
+				<string>application/engineeringthesis</string>
+			</dict>
+		</dict>
 	</array>
 </dict>
 </plist>

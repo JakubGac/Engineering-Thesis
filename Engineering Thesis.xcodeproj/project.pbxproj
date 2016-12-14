@@ -7,7 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		272211D31DE4C02B003B2266 /* Engineering_Thesis.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 272211D21DE4C02B003B2266 /* Engineering_Thesis.xcdatamodel */; };
+		2703856B1DE4E632009D6540 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270385691DE4E632009D6540 /* Realm.framework */; };
+		2703856C1DE4E632009D6540 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 270385691DE4E632009D6540 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2703856D1DE4E632009D6540 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2703856A1DE4E632009D6540 /* RealmSwift.framework */; };
+		2703856E1DE4E632009D6540 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2703856A1DE4E632009D6540 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		270385701DE4E668009D6540 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2703856F1DE4E668009D6540 /* Question.swift */; };
+		270385731DE4FA4C009D6540 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270385721DE4FA4C009D6540 /* Answer.swift */; };
+		270385751DE4FA70009D6540 /* DaoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270385741DE4FA70009D6540 /* DaoManager.swift */; };
+		270385791DE78E0E009D6540 /* ExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270385781DE78E0E009D6540 /* ExamViewController.swift */; };
+		278E14071E016C3D00CF78B0 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278E14061E016C3D00CF78B0 /* QuestionTableViewCell.swift */; };
+		278E14091E01726200CF78B0 /* OpenQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278E14081E01726200CF78B0 /* OpenQuestionViewController.swift */; };
+		278E140B1E01727E00CF78B0 /* CloseQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278E140A1E01727E00CF78B0 /* CloseQuestionViewController.swift */; };
+		27A6BF231DFC630100070918 /* ExamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A6BF221DFC630100070918 /* ExamTableViewController.swift */; };
 		27C127051DDFAA66004C56FB /* QuestionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C127041DDFAA66004C56FB /* QuestionsTableViewController.swift */; };
 		27E459D21DDDC56C006099F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E459D11DDDC56C006099F4 /* AppDelegate.swift */; };
 		27E459D71DDDC56C006099F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27E459D51DDDC56C006099F4 /* Main.storyboard */; };
@@ -17,10 +28,38 @@
 		27E459EF1DDDD6DF006099F4 /* MainStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E459EE1DDDD6DF006099F4 /* MainStudentViewController.swift */; };
 		27E459F41DDE435A006099F4 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27E459F31DDE435A006099F4 /* Media.xcassets */; };
 		27F13DB31DDFBF12006C5E11 /* AddQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F13DB21DDFBF12006C5E11 /* AddQuestionViewController.swift */; };
+		27F67BFE1DFC43DA003491A6 /* questionicon_22.png in Resources */ = {isa = PBXBuildFile; fileRef = 27F67BFA1DFC43DA003491A6 /* questionicon_22.png */; };
+		27F67BFF1DFC43DA003491A6 /* questionicon_44.png in Resources */ = {isa = PBXBuildFile; fileRef = 27F67BFB1DFC43DA003491A6 /* questionicon_44.png */; };
+		27F67C001DFC43DA003491A6 /* questionicon_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 27F67BFC1DFC43DA003491A6 /* questionicon_64.png */; };
+		27F67C011DFC43DA003491A6 /* questionicon_320.png in Resources */ = {isa = PBXBuildFile; fileRef = 27F67BFD1DFC43DA003491A6 /* questionicon_320.png */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		272211DA1DE4E4DB003B2266 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2703856E1DE4E632009D6540 /* RealmSwift.framework in Embed Frameworks */,
+				2703856C1DE4E632009D6540 /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		272211D21DE4C02B003B2266 /* Engineering_Thesis.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Engineering_Thesis.xcdatamodel; sourceTree = "<group>"; };
+		270385691DE4E632009D6540 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		2703856A1DE4E632009D6540 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		2703856F1DE4E668009D6540 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		270385721DE4FA4C009D6540 /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		270385741DE4FA70009D6540 /* DaoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaoManager.swift; sourceTree = "<group>"; };
+		270385781DE78E0E009D6540 /* ExamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamViewController.swift; sourceTree = "<group>"; };
+		278E14061E016C3D00CF78B0 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
+		278E14081E01726200CF78B0 /* OpenQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenQuestionViewController.swift; sourceTree = "<group>"; };
+		278E140A1E01727E00CF78B0 /* CloseQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseQuestionViewController.swift; sourceTree = "<group>"; };
+		27A6BF221DFC630100070918 /* ExamTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamTableViewController.swift; sourceTree = "<group>"; };
 		27C127041DDFAA66004C56FB /* QuestionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsTableViewController.swift; sourceTree = "<group>"; };
 		27E459CE1DDDC56C006099F4 /* Engineering Thesis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Engineering Thesis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E459D11DDDC56C006099F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +71,10 @@
 		27E459EE1DDDD6DF006099F4 /* MainStudentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainStudentViewController.swift; sourceTree = "<group>"; };
 		27E459F31DDE435A006099F4 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		27F13DB21DDFBF12006C5E11 /* AddQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddQuestionViewController.swift; sourceTree = "<group>"; };
+		27F67BFA1DFC43DA003491A6 /* questionicon_22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = questionicon_22.png; sourceTree = "<group>"; };
+		27F67BFB1DFC43DA003491A6 /* questionicon_44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = questionicon_44.png; sourceTree = "<group>"; };
+		27F67BFC1DFC43DA003491A6 /* questionicon_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = questionicon_64.png; sourceTree = "<group>"; };
+		27F67BFD1DFC43DA003491A6 /* questionicon_320.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = questionicon_320.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2703856D1DE4E632009D6540 /* RealmSwift.framework in Frameworks */,
+				2703856B1DE4E632009D6540 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +93,8 @@
 		27E459C51DDDC56B006099F4 = {
 			isa = PBXGroup;
 			children = (
+				270385691DE4E632009D6540 /* Realm.framework */,
+				2703856A1DE4E632009D6540 /* RealmSwift.framework */,
 				27E459D01DDDC56C006099F4 /* Engineering Thesis */,
 				27E459CF1DDDC56C006099F4 /* Products */,
 			);
@@ -69,6 +116,7 @@
 				27E459F01DDDD6EE006099F4 /* Student */,
 				27E459EA1DDDC63F006099F4 /* MainMenu */,
 				27E459E71DDDC5DF006099F4 /* Core Data */,
+				27F67BE91DFC28A4003491A6 /* Icons */,
 				27E459E61DDDC5CB006099F4 /* Supporting Files */,
 			);
 			path = "Engineering Thesis";
@@ -88,7 +136,9 @@
 		27E459E71DDDC5DF006099F4 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				272211D21DE4C02B003B2266 /* Engineering_Thesis.xcdatamodel */,
+				270385741DE4FA70009D6540 /* DaoManager.swift */,
+				2703856F1DE4E668009D6540 /* Question.swift */,
+				270385721DE4FA4C009D6540 /* Answer.swift */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -104,6 +154,7 @@
 		27E459ED1DDDD6C6006099F4 /* Teacher */ = {
 			isa = PBXGroup;
 			children = (
+				270385781DE78E0E009D6540 /* ExamViewController.swift */,
 				27F13DB21DDFBF12006C5E11 /* AddQuestionViewController.swift */,
 				27C127041DDFAA66004C56FB /* QuestionsTableViewController.swift */,
 				27E459EB1DDDD6BE006099F4 /* MainTeacherViewController.swift */,
@@ -115,8 +166,23 @@
 			isa = PBXGroup;
 			children = (
 				27E459EE1DDDD6DF006099F4 /* MainStudentViewController.swift */,
+				27A6BF221DFC630100070918 /* ExamTableViewController.swift */,
+				278E14061E016C3D00CF78B0 /* QuestionTableViewCell.swift */,
+				278E14081E01726200CF78B0 /* OpenQuestionViewController.swift */,
+				278E140A1E01727E00CF78B0 /* CloseQuestionViewController.swift */,
 			);
 			name = Student;
+			sourceTree = "<group>";
+		};
+		27F67BE91DFC28A4003491A6 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				27F67BFA1DFC43DA003491A6 /* questionicon_22.png */,
+				27F67BFB1DFC43DA003491A6 /* questionicon_44.png */,
+				27F67BFC1DFC43DA003491A6 /* questionicon_64.png */,
+				27F67BFD1DFC43DA003491A6 /* questionicon_320.png */,
+			);
+			name = Icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,6 +195,8 @@
 				27E459CA1DDDC56B006099F4 /* Sources */,
 				27E459CB1DDDC56B006099F4 /* Frameworks */,
 				27E459CC1DDDC56B006099F4 /* Resources */,
+				272211DA1DE4E4DB003B2266 /* Embed Frameworks */,
+				270385711DE4E9AB009D6540 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -178,13 +246,33 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27F67BFE1DFC43DA003491A6 /* questionicon_22.png in Resources */,
+				27F67BFF1DFC43DA003491A6 /* questionicon_44.png in Resources */,
+				27F67C001DFC43DA003491A6 /* questionicon_64.png in Resources */,
 				27E459DF1DDDC56C006099F4 /* LaunchScreen.storyboard in Resources */,
 				27E459F41DDE435A006099F4 /* Media.xcassets in Resources */,
+				27F67C011DFC43DA003491A6 /* questionicon_320.png in Resources */,
 				27E459D71DDDC56C006099F4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		270385711DE4E9AB009D6540 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		27E459CA1DDDC56B006099F4 /* Sources */ = {
@@ -196,8 +284,15 @@
 				27E459EC1DDDD6BE006099F4 /* MainTeacherViewController.swift in Sources */,
 				27E459EF1DDDD6DF006099F4 /* MainStudentViewController.swift in Sources */,
 				27F13DB31DDFBF12006C5E11 /* AddQuestionViewController.swift in Sources */,
+				270385701DE4E668009D6540 /* Question.swift in Sources */,
+				270385751DE4FA70009D6540 /* DaoManager.swift in Sources */,
 				27E459D21DDDC56C006099F4 /* AppDelegate.swift in Sources */,
-				272211D31DE4C02B003B2266 /* Engineering_Thesis.xcdatamodel in Sources */,
+				278E14091E01726200CF78B0 /* OpenQuestionViewController.swift in Sources */,
+				270385731DE4FA4C009D6540 /* Answer.swift in Sources */,
+				278E14071E016C3D00CF78B0 /* QuestionTableViewCell.swift in Sources */,
+				270385791DE78E0E009D6540 /* ExamViewController.swift in Sources */,
+				27A6BF231DFC630100070918 /* ExamTableViewController.swift in Sources */,
+				278E140B1E01727E00CF78B0 /* CloseQuestionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,8 +415,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = KAE5HV8HDG;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = SE86J8TG27;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Engineering Thesis/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "JG.Engineering-Thesis";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -333,8 +434,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = KAE5HV8HDG;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = SE86J8TG27;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Engineering Thesis/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "JG.Engineering-Thesis";
 				PRODUCT_NAME = "$(TARGET_NAME)";

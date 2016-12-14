@@ -7,12 +7,11 @@
 //
 
 import UIKit
-import CoreData
+import RealmSwift
 
 class AddQuestionViewController: UIViewController {
 
-    var contentOfController = [Question]()
-    
+    // outlets
     @IBOutlet weak var switchButton: UISwitch!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var questionContent: UITextView!
@@ -37,6 +36,9 @@ class AddQuestionViewController: UIViewController {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var saveQuestionButtonOutlet: UIBarButtonItem!
     
+    // model
+    var contentOfController = [Question]()
+    
     @IBAction func switchButtonChanged(_ sender: UISwitch) {
         if switchButton.isOn {
             changeStates(visible: false)
@@ -48,10 +50,9 @@ class AddQuestionViewController: UIViewController {
     @IBAction func saveQuestionButton(_ sender: UIBarButtonItem) {
         if contentOfController.isEmpty {
             if switchButton.isOn {
-                if addOpenQuestion() {
-                    if addCloseQuestion() {
-                        printSafeAllert()
-                    }
+                // add close question
+                if addCloseQuestion() {
+                    printSafeAllert()
                 }
             } else {
                 if addOpenQuestion() {
@@ -61,99 +62,87 @@ class AddQuestionViewController: UIViewController {
         } else {
             // just watch existing question
             saveQuestionButtonOutlet.isEnabled = false
+            printNoEditionAlert(alertMessage: "Brak możliwości edycji pytania")
         }
     }
     
-    private var appDelegate = UIApplication.shared.delegate as? AppDelegate
-    private var backgroundQueue = DispatchQueue(label: "com.app.queue", qos: .background, target: nil)
-    
     private func addOpenQuestion() -> Bool {
-        if !questionContent.text.isEmpty {
-            if !numberOfQuestionTextField.text!.isEmpty {
-                spinner?.startAnimating()
-                let context = self.appDelegate!.persistentContainer.viewContext
-                let number = numberOfQuestionTextField.text!
-                let text = questionContent.text
-                let open = !(switchButton.isOn)
-                backgroundQueue.async {
-                    // create new question to store in database
-                    let newQuestion = Question(context: context)
-                    newQuestion.number = Int16(number)!
-                    newQuestion.content = text
-                    newQuestion.open = open
-                    do {
-                        try context.save()
-                        DispatchQueue.main.async {
-                            self.spinner?.stopAnimating()
-                        }
-                    } catch let error {
-                        DispatchQueue.main.async {
-                            self.spinner?.stopAnimating()
-                        }
-                        print("Błąd w trakcie zapisu do bazy: \(error)")
+        if let questionText = questionContent.text {
+            if !questionText.isEmpty {
+                if let questionNumber = numberOfQuestionTextField.text {
+                    if !questionNumber.isEmpty {
+                        spinner?.startAnimating()
+                        DaoManager().addNewQuestion(content: questionText, number: Int(questionNumber)!, isOpen: !switchButton.isOn, received: false)
+                        spinner?.stopAnimating()
+                    } else {
+                        printAlert(alertMessage: "Błąd w numerze pytania")
+                        return false
                     }
                 }
             } else {
-                printAlert(alertMessage: "Brak numeru pytania")
+                printAlert(alertMessage: "Brak treści pytania")
                 return false
             }
-        } else {
-            printAlert(alertMessage: "Brak treści pytania")
-            return false
         }
         return true
     }
     
     private func addCloseQuestion() -> Bool {
-        if !contentOfAAnswerTextView.text.isEmpty || !contentOfBAnswerTextView.text.isEmpty
-            || !contentOfCAnswerTextView.text.isEmpty || !contentOfDAnswerTextView.text.isEmpty {
-            let context = self.appDelegate!.persistentContainer.viewContext
-            let text = contentOfAAnswerTextView.text!
-            let correct = answerASwitchButton.isOn
-            print(numberOfQuestionTextField.text!)
-            backgroundQueue.async {
-                // create new question to store in database
-                let newAnswer = Answer(context: context)
-                newAnswer.content = text
-                newAnswer.correct = correct
-                newAnswer.number = Int16(self.numberOfQuestionTextField.text!)!
-                do {
-                    try context.save()
-                    DispatchQueue.main.async {
-                        self.spinner?.stopAnimating()
+        if let firstAnswerText = contentOfAAnswerTextView.text {
+            if let secondAnswerText = contentOfBAnswerTextView.text {
+                if let thirdAnswerText = contentOfCAnswerTextView.text {
+                    if let fourthAnswerText = contentOfDAnswerTextView.text {
+                        if !firstAnswerText.isEmpty && !secondAnswerText.isEmpty && !thirdAnswerText.isEmpty && !fourthAnswerText.isEmpty {
+                            if let questionText = questionContent.text {
+                                if !questionText.isEmpty {
+                                    if let questionNumber = numberOfQuestionTextField.text {
+                                        if !questionNumber.isEmpty {
+                                            spinner?.startAnimating()
+                                            DaoManager().addNewQuestion(content: questionText, number: Int(questionNumber)!, isOpen: !switchButton.isOn, answerAText: firstAnswerText, answerBText: secondAnswerText, answerCText: thirdAnswerText, answerDText: fourthAnswerText, answerAIsCorrect: answerASwitchButton.isOn, answerBIsCorrect: answerBSwitchButton.isOn, answerCIsCorrect: answerCSwitchButton.isOn, answerDIsCorrect: answerDSwitchButton.isOn, received: false)
+                                            spinner?.stopAnimating()
+                                            return true
+                                        } else {
+                                            printAlert(alertMessage: "Błąd w numerze pytania")
+                                            return false
+                                        }
+                                    }
+                                } else {
+                                    printAlert(alertMessage: "Brak treści pytania")
+                                    return false
+                                }
+                            }
+                        } else {
+                            printAlert(alertMessage: "Brak treści odpowiedzi")
+                            return false
+                        }
                     }
-                } catch let error {
-                    DispatchQueue.main.async {
-                        self.spinner?.stopAnimating()
-                    }
-                    print("Błąd w trakcie zapisu do bazy: \(error)")
                 }
             }
-        } else {
-            printAlert(alertMessage: "Brak treści odpowiedzi")
-            return false
         }
-        return true
+        return false
     }
 
     private func displayContent() {
-        if (contentOfController.first?.open)! {
-            // open question
-            changeStates(visible: false)
-            numberOfQuestionTextField.text = String(describing: (contentOfController.first?.number)!)
-            questionContent.text = contentOfController.first?.content!
-        } else {
-            // close questtion
-            /*changeStates(visible: true)
-            numberOfQuestionTextField.text = String(describing: (contentOfController.first?.number))
-            questionContent.text = contentOfController.first?.content!
-            let context = self.appDelegate!.persistentContainer.viewContext
-            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Answer")
-            request.predicate = NSPredicate(format: "numberOfQuestion", contentOfController.first!.number!)
-            let answers = (try? context.fetch(request)) as? [Answer]
-            print(answers ?? "pusta tablica")
-            //let question = (try? context.fetch(request))?.first as? Question
-            */
+        if let question = contentOfController.first {
+            if question.isOpen {
+                // open question
+                changeStates(visible: false)
+                questionContent.text = question.content
+                numberOfQuestionTextField.text = String(question.number)
+            } else {
+                // close question
+                changeStates(visible: true)
+                numberOfQuestionTextField.text = String(question.number)
+                questionContent.text = question.content
+                contentOfAAnswerTextView.text = question.answers[0].content
+                answerASwitchButton.isOn = question.answers[0].isCorrect
+                contentOfBAnswerTextView.text = question.answers[1].content
+                answerBSwitchButton.isOn = question.answers[1].isCorrect
+                contentOfCAnswerTextView.text = question.answers[2].content
+                answerCSwitchButton.isOn = question.answers[2].isCorrect
+                contentOfDAnswerTextView.text = question.answers[3].content
+                answerDSwitchButton.isOn = question.answers[3].isCorrect
+            }
         }
     }
     
@@ -164,6 +153,14 @@ class AddQuestionViewController: UIViewController {
         } else {
             displayContent()
         }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        questionContent.endEditing(true)
+        contentOfAAnswerTextView.endEditing(true)
+        contentOfBAnswerTextView.endEditing(true)
+        contentOfCAnswerTextView.endEditing(true)
+        contentOfDAnswerTextView.endEditing(true)
     }
     
     private func printAlert(alertMessage: String) {
@@ -179,6 +176,13 @@ class AddQuestionViewController: UIViewController {
             self.navigationController!.popViewController(animated: true)
         }
         myAlert.addAction(okAction)
+        self.present(myAlert, animated: true, completion: nil)
+    }
+    
+    private func printNoEditionAlert(alertMessage: String) {
+        let myAlert = UIAlertController(title: "Błąd", message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
+        let actionOK = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+        myAlert.addAction(actionOK)
         self.present(myAlert, animated: true, completion: nil)
     }
     

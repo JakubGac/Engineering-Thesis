@@ -19,6 +19,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        guard url.pathExtension == "qslt" else { return false }
+        
+        DaoManager().importData(from: url)
+        
+        if let navigationController = window?.rootViewController as? UINavigationController {
+            if let mainMenuViewController = navigationController.viewControllers.first as? MainMenuViewController {
+                mainMenuViewController.performSegue(withIdentifier: "Questions Added", sender: nil)
+            }
+        }
+        return true
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

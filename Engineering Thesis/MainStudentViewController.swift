@@ -10,26 +10,34 @@ import UIKit
 
 class MainStudentViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    private struct Storyboard {
+        static let startExamButton = "Rozpocznij egzamin"
+        static let receiveQuestionsButton = "Odbierz pytania"
+        static let StartExamSegue = "StartExam"
+        static let ReceiveQuestionsSeque = "ReceiveQuestions"
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        if let buttonText = sender.currentTitle {
+            if buttonText == Storyboard.startExamButton {
+                performSegue(withIdentifier: Storyboard.StartExamSegue, sender: sender)
+            } else {
+                if buttonText == Storyboard.receiveQuestionsButton {
+                    // przycisk do odbierania pytań
+                }
+            }
+        }
     }
-    */
-
+    
+    // MARK: - Navigation
+    private func printAlert(alertMessage: String) {
+        let myAlert = UIAlertController(title: "Błąd", message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
+        let actionOK = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+        myAlert.addAction(actionOK)
+        self.present(myAlert, animated: true, completion: nil)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }
