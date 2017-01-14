@@ -21,14 +21,14 @@
 				<string>questionicon_320.png</string>
 			</array>
 			<key>CFBundleTypeName</key>
-			<string>Question List Document</string>
+			<string>Exam Document</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>LSHandlerRank</key>
 			<string>Owner</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.JG.questionlist.qslt</string>
+				<string>com.JG.exam.ex</string>
 			</array>
 		</dict>
 	</array>
@@ -56,6 +56,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIStatusBarHidden</key>
+	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -75,13 +77,13 @@
 				<string>public.data</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Question List Document</string>
+			<string>Exam Document</string>
 			<key>UTTypeIdentifier</key>
-			<string>com.JG.questionlist.qslt</string>
+			<string>com.JG.exam.ex</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
-				<string>qslt</string>
+				<string>ex</string>
 				<key>public.mime-type</key>
 				<string>application/engineeringthesis</string>
 			</dict>

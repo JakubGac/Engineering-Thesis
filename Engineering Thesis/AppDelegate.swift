@@ -20,16 +20,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        guard url.pathExtension == "qslt" else { return false }
-        
-        DaoManager().importData(from: url)
-        
-        if let navigationController = window?.rootViewController as? UINavigationController {
-            if let mainMenuViewController = navigationController.viewControllers.first as? MainMenuViewController {
-                mainMenuViewController.performSegue(withIdentifier: "Questions Added", sender: nil)
+        if url.pathExtension == "ex" {
+            DaoManager().importData(from: url)
+            if let navigationController = window?.rootViewController as? UINavigationController {
+                if let mainMenuViewController = navigationController.viewControllers.first as? MainMenuViewController {
+                    mainMenuViewController.performSegue(withIdentifier: "Exam Added", sender: nil)
+                }
             }
+            return true
+        } else {
+            return false
         }
-        return true
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -57,7 +58,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // MARK: - Core Data stack
-
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation

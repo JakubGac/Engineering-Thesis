@@ -10,9 +10,12 @@ import Foundation
 import RealmSwift
 
 class Question: Object {
+    dynamic var id = 0
     dynamic var content = ""
-    dynamic var number = 0
+    dynamic var subject = ""
+    dynamic var category = ""
     dynamic var isOpen = false
-    dynamic var received = false
+    dynamic var numberOfPoints = 0.0
     var answers = List<Answer>()
+    let test = LinkingObjects(fromType: Test.self, property: "questions")
 }
