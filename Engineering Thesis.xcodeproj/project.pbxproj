@@ -16,44 +16,40 @@
 		2703856D1DE4E632009D6540 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2703856A1DE4E632009D6540 /* RealmSwift.framework */; };
 		2703856E1DE4E632009D6540 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2703856A1DE4E632009D6540 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		270385701DE4E668009D6540 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2703856F1DE4E668009D6540 /* Question.swift */; };
-		270385731DE4FA4C009D6540 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270385721DE4FA4C009D6540 /* Answer.swift */; };
 		270385751DE4FA70009D6540 /* DaoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270385741DE4FA70009D6540 /* DaoManager.swift */; };
 		270385791DE78E0E009D6540 /* ExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270385781DE78E0E009D6540 /* ExamViewController.swift */; };
 		2717620E1E05838C004DEF8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2717620D1E05838C004DEF8C /* Main.storyboard */; };
 		272CBE2F1E28E7F2001ACD90 /* TmpPickedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272CBE2E1E28E7F2001ACD90 /* TmpPickedTest.swift */; };
-		275EFA661E115EBD00CA1309 /* SubjectsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EFA651E115EBD00CA1309 /* SubjectsTableViewCell.swift */; };
-		275EFA681E11635C00CA1309 /* CategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EFA671E11635C00CA1309 /* CategoriesTableViewCell.swift */; };
-		275EFA6A1E1163CB00CA1309 /* AllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EFA691E1163CB00CA1309 /* AllTableViewCell.swift */; };
 		276B10C51E0569340099FBBB /* AddOrEditQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276B10C41E0569340099FBBB /* AddOrEditQuestionViewController.swift */; };
 		277203AF1E227F8E00767C8A /* TestsDataBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277203AE1E227F8E00767C8A /* TestsDataBaseViewController.swift */; };
 		277203B11E22811200767C8A /* TestsDataBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277203B01E22811200767C8A /* TestsDataBaseTableViewController.swift */; };
-		277203B51E22D85500767C8A /* TestsDataBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277203B41E22D85500767C8A /* TestsDataBaseTableViewCell.swift */; };
 		277203B71E22E68200767C8A /* TestDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277203B61E22E68200767C8A /* TestDetailsViewController.swift */; };
 		277203B91E22F12F00767C8A /* TestQuestionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277203B81E22F12E00767C8A /* TestQuestionsTableViewController.swift */; };
-		277203BB1E22F40D00767C8A /* TestQuestionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277203BA1E22F40D00767C8A /* TestQuestionsTableViewCell.swift */; };
+		2776B5A61E2ADE5500FB34C1 /* TestAnswerDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776B5A51E2ADE5500FB34C1 /* TestAnswerDao.swift */; };
+		2776B5A81E2AE0A500FB34C1 /* StudentTestDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776B5A71E2AE0A500FB34C1 /* StudentTestDao.swift */; };
+		2776B5AA1E2AE1B800FB34C1 /* TmpPickedTestDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776B5A91E2AE1B800FB34C1 /* TmpPickedTestDao.swift */; };
+		2776B5AC1E2AE2C400FB34C1 /* TmpPickedQuestionsDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776B5AB1E2AE2C400FB34C1 /* TmpPickedQuestionsDao.swift */; };
+		2776B5AE1E2AE3BF00FB34C1 /* TestDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776B5AD1E2AE3BF00FB34C1 /* TestDao.swift */; };
+		2776B5B51E2AE60E00FB34C1 /* QuestionDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776B5B41E2AE60E00FB34C1 /* QuestionDao.swift */; };
 		2792FCD01E12F78100748BF7 /* ShowQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2792FCCF1E12F78100748BF7 /* ShowQuestionViewController.swift */; };
 		27A4FCBA1E2662F40026FAAF /* ExamTestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4FCB91E2662F40026FAAF /* ExamTestsViewController.swift */; };
 		27A4FCBC1E2664320026FAAF /* ExamTestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4FCBB1E2664320026FAAF /* ExamTestsTableViewController.swift */; };
-		27A4FCBE1E2665290026FAAF /* ExamTestsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4FCBD1E2665290026FAAF /* ExamTestsTableViewCell.swift */; };
+		27B45E0B1E2A4DE6001ED028 /* StudentExamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B45E0A1E2A4DE6001ED028 /* StudentExamTableViewController.swift */; };
+		27B45E0D1E2A4F0B001ED028 /* TestAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B45E0C1E2A4F0B001ED028 /* TestAnswer.swift */; };
+		27B45E111E2A70E6001ED028 /* StudentExamOpenQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B45E101E2A70E6001ED028 /* StudentExamOpenQuestionViewController.swift */; };
+		27B45E131E2A7123001ED028 /* StudentExamCloseQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B45E121E2A7123001ED028 /* StudentExamCloseQuestionViewController.swift */; };
 		27BFBC7E1E05EC58009FF425 /* SubjectsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BFBC7D1E05EC58009FF425 /* SubjectsTableViewController.swift */; };
 		27BFBC801E05EC64009FF425 /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BFBC7F1E05EC64009FF425 /* CategoriesTableViewController.swift */; };
 		27BFBC841E05EC84009FF425 /* AllTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BFBC831E05EC84009FF425 /* AllTableViewController.swift */; };
 		27C575061E215EAC00AC17EC /* TmpPickedQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C575051E215EAC00AC17EC /* TmpPickedQuestions.swift */; };
-		27C575081E216B9B00AC17EC /* PickedQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C575071E216B9B00AC17EC /* PickedQuestionTableViewCell.swift */; };
 		27CB47951E0673710073BC31 /* TextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CB47941E0673710073BC31 /* TextFieldValidator.swift */; };
 		27D972541E296E180053E044 /* StudentTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D972531E296E180053E044 /* StudentTest.swift */; };
-		27D972561E296E770053E044 /* StudentQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D972551E296E770053E044 /* StudentQuestion.swift */; };
-		27D972581E296F490053E044 /* StudentAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D972571E296F490053E044 /* StudentAnswer.swift */; };
 		27E459D21DDDC56C006099F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E459D11DDDC56C006099F4 /* AppDelegate.swift */; };
 		27E459DF1DDDC56C006099F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27E459DD1DDDC56C006099F4 /* LaunchScreen.storyboard */; };
 		27E459E91DDDC62C006099F4 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E459E81DDDC62C006099F4 /* MainMenuViewController.swift */; };
 		27E459EF1DDDD6DF006099F4 /* MainStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E459EE1DDDD6DF006099F4 /* MainStudentViewController.swift */; };
 		27E459F41DDE435A006099F4 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27E459F31DDE435A006099F4 /* Media.xcassets */; };
 		27EE27B21E13F0C6001E74BC /* MainTeacherMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE27B11E13F0C6001E74BC /* MainTeacherMenuViewController.swift */; };
-		27F67BFE1DFC43DA003491A6 /* questionicon_22.png in Resources */ = {isa = PBXBuildFile; fileRef = 27F67BFA1DFC43DA003491A6 /* questionicon_22.png */; };
-		27F67BFF1DFC43DA003491A6 /* questionicon_44.png in Resources */ = {isa = PBXBuildFile; fileRef = 27F67BFB1DFC43DA003491A6 /* questionicon_44.png */; };
-		27F67C001DFC43DA003491A6 /* questionicon_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 27F67BFC1DFC43DA003491A6 /* questionicon_64.png */; };
-		27F67C011DFC43DA003491A6 /* questionicon_320.png in Resources */ = {isa = PBXBuildFile; fileRef = 27F67BFD1DFC43DA003491A6 /* questionicon_320.png */; };
 		27FBD46D1E24F23F00E11B3F /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FBD4661E24F23F00E11B3F /* TPKeyboardAvoidingCollectionView.m */; };
 		27FBD46E1E24F23F00E11B3F /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FBD4681E24F23F00E11B3F /* TPKeyboardAvoidingScrollView.m */; };
 		27FBD46F1E24F23F00E11B3F /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FBD46A1E24F23F00E11B3F /* TPKeyboardAvoidingTableView.m */; };
@@ -83,34 +79,34 @@
 		270385691DE4E632009D6540 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		2703856A1DE4E632009D6540 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		2703856F1DE4E668009D6540 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
-		270385721DE4FA4C009D6540 /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		270385741DE4FA70009D6540 /* DaoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaoManager.swift; sourceTree = "<group>"; };
 		270385781DE78E0E009D6540 /* ExamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamViewController.swift; sourceTree = "<group>"; };
 		2717620D1E05838C004DEF8C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		272CBE2E1E28E7F2001ACD90 /* TmpPickedTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TmpPickedTest.swift; sourceTree = "<group>"; };
-		275EFA651E115EBD00CA1309 /* SubjectsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectsTableViewCell.swift; sourceTree = "<group>"; };
-		275EFA671E11635C00CA1309 /* CategoriesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewCell.swift; sourceTree = "<group>"; };
-		275EFA691E1163CB00CA1309 /* AllTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTableViewCell.swift; sourceTree = "<group>"; };
 		276B10C41E0569340099FBBB /* AddOrEditQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOrEditQuestionViewController.swift; sourceTree = "<group>"; };
 		277203AE1E227F8E00767C8A /* TestsDataBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestsDataBaseViewController.swift; sourceTree = "<group>"; };
 		277203B01E22811200767C8A /* TestsDataBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestsDataBaseTableViewController.swift; sourceTree = "<group>"; };
-		277203B41E22D85500767C8A /* TestsDataBaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestsDataBaseTableViewCell.swift; sourceTree = "<group>"; };
 		277203B61E22E68200767C8A /* TestDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDetailsViewController.swift; sourceTree = "<group>"; };
 		277203B81E22F12E00767C8A /* TestQuestionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestQuestionsTableViewController.swift; sourceTree = "<group>"; };
-		277203BA1E22F40D00767C8A /* TestQuestionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestQuestionsTableViewCell.swift; sourceTree = "<group>"; };
+		2776B5A51E2ADE5500FB34C1 /* TestAnswerDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnswerDao.swift; sourceTree = "<group>"; };
+		2776B5A71E2AE0A500FB34C1 /* StudentTestDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentTestDao.swift; sourceTree = "<group>"; };
+		2776B5A91E2AE1B800FB34C1 /* TmpPickedTestDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TmpPickedTestDao.swift; sourceTree = "<group>"; };
+		2776B5AB1E2AE2C400FB34C1 /* TmpPickedQuestionsDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TmpPickedQuestionsDao.swift; sourceTree = "<group>"; };
+		2776B5AD1E2AE3BF00FB34C1 /* TestDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDao.swift; sourceTree = "<group>"; };
+		2776B5B41E2AE60E00FB34C1 /* QuestionDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionDao.swift; sourceTree = "<group>"; };
 		2792FCCF1E12F78100748BF7 /* ShowQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowQuestionViewController.swift; sourceTree = "<group>"; };
 		27A4FCB91E2662F40026FAAF /* ExamTestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamTestsViewController.swift; sourceTree = "<group>"; };
 		27A4FCBB1E2664320026FAAF /* ExamTestsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamTestsTableViewController.swift; sourceTree = "<group>"; };
-		27A4FCBD1E2665290026FAAF /* ExamTestsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamTestsTableViewCell.swift; sourceTree = "<group>"; };
+		27B45E0A1E2A4DE6001ED028 /* StudentExamTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentExamTableViewController.swift; sourceTree = "<group>"; };
+		27B45E0C1E2A4F0B001ED028 /* TestAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnswer.swift; sourceTree = "<group>"; };
+		27B45E101E2A70E6001ED028 /* StudentExamOpenQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentExamOpenQuestionViewController.swift; sourceTree = "<group>"; };
+		27B45E121E2A7123001ED028 /* StudentExamCloseQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentExamCloseQuestionViewController.swift; sourceTree = "<group>"; };
 		27BFBC7D1E05EC58009FF425 /* SubjectsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectsTableViewController.swift; sourceTree = "<group>"; };
 		27BFBC7F1E05EC64009FF425 /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
 		27BFBC831E05EC84009FF425 /* AllTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTableViewController.swift; sourceTree = "<group>"; };
 		27C575051E215EAC00AC17EC /* TmpPickedQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TmpPickedQuestions.swift; sourceTree = "<group>"; };
-		27C575071E216B9B00AC17EC /* PickedQuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickedQuestionTableViewCell.swift; sourceTree = "<group>"; };
 		27CB47941E0673710073BC31 /* TextFieldValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldValidator.swift; sourceTree = "<group>"; };
 		27D972531E296E180053E044 /* StudentTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentTest.swift; sourceTree = "<group>"; };
-		27D972551E296E770053E044 /* StudentQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentQuestion.swift; sourceTree = "<group>"; };
-		27D972571E296F490053E044 /* StudentAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentAnswer.swift; sourceTree = "<group>"; };
 		27E459CE1DDDC56C006099F4 /* Engineering Thesis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Engineering Thesis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E459D11DDDC56C006099F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27E459DE1DDDC56C006099F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -119,10 +115,6 @@
 		27E459EE1DDDD6DF006099F4 /* MainStudentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainStudentViewController.swift; sourceTree = "<group>"; };
 		27E459F31DDE435A006099F4 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		27EE27B11E13F0C6001E74BC /* MainTeacherMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTeacherMenuViewController.swift; sourceTree = "<group>"; };
-		27F67BFA1DFC43DA003491A6 /* questionicon_22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = questionicon_22.png; sourceTree = "<group>"; };
-		27F67BFB1DFC43DA003491A6 /* questionicon_44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = questionicon_44.png; sourceTree = "<group>"; };
-		27F67BFC1DFC43DA003491A6 /* questionicon_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = questionicon_64.png; sourceTree = "<group>"; };
-		27F67BFD1DFC43DA003491A6 /* questionicon_320.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = questionicon_320.png; sourceTree = "<group>"; };
 		27FBD4641E24F23E00E11B3F /* Engineering Thesis-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Engineering Thesis-Bridging-Header.h"; sourceTree = "<group>"; };
 		27FBD4651E24F23F00E11B3F /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
 		27FBD4661E24F23F00E11B3F /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
@@ -153,15 +145,66 @@
 				270241771E2028010043CBC3 /* NewTestViewController.swift */,
 				270241791E202A0C0043CBC3 /* AddNewTestViewController.swift */,
 				2702417B1E203C4E0043CBC3 /* PickQuestionTableViewController.swift */,
-				27C575071E216B9B00AC17EC /* PickedQuestionTableViewCell.swift */,
 				277203AE1E227F8E00767C8A /* TestsDataBaseViewController.swift */,
 				277203B01E22811200767C8A /* TestsDataBaseTableViewController.swift */,
-				277203B41E22D85500767C8A /* TestsDataBaseTableViewCell.swift */,
 				277203B61E22E68200767C8A /* TestDetailsViewController.swift */,
 				277203B81E22F12E00767C8A /* TestQuestionsTableViewController.swift */,
-				277203BA1E22F40D00767C8A /* TestQuestionsTableViewCell.swift */,
 			);
 			name = "Tests Data Base";
+			sourceTree = "<group>";
+		};
+		2776B5AF1E2AE3DB00FB34C1 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				270241741E2024930043CBC3 /* Test.swift */,
+				2776B5AD1E2AE3BF00FB34C1 /* TestDao.swift */,
+			);
+			name = Test;
+			sourceTree = "<group>";
+		};
+		2776B5B01E2AE3E600FB34C1 /* Studen Test Answers */ = {
+			isa = PBXGroup;
+			children = (
+				27B45E0C1E2A4F0B001ED028 /* TestAnswer.swift */,
+				2776B5A51E2ADE5500FB34C1 /* TestAnswerDao.swift */,
+			);
+			name = "Studen Test Answers";
+			sourceTree = "<group>";
+		};
+		2776B5B11E2AE3F400FB34C1 /* Student Test */ = {
+			isa = PBXGroup;
+			children = (
+				27D972531E296E180053E044 /* StudentTest.swift */,
+				2776B5A71E2AE0A500FB34C1 /* StudentTestDao.swift */,
+			);
+			name = "Student Test";
+			sourceTree = "<group>";
+		};
+		2776B5B21E2AE41600FB34C1 /* Tmp Picked Test */ = {
+			isa = PBXGroup;
+			children = (
+				272CBE2E1E28E7F2001ACD90 /* TmpPickedTest.swift */,
+				2776B5A91E2AE1B800FB34C1 /* TmpPickedTestDao.swift */,
+			);
+			name = "Tmp Picked Test";
+			sourceTree = "<group>";
+		};
+		2776B5B31E2AE42600FB34C1 /* Tmp Picked Questions */ = {
+			isa = PBXGroup;
+			children = (
+				27C575051E215EAC00AC17EC /* TmpPickedQuestions.swift */,
+				2776B5AB1E2AE2C400FB34C1 /* TmpPickedQuestionsDao.swift */,
+			);
+			name = "Tmp Picked Questions";
+			sourceTree = "<group>";
+		};
+		2776B5B61E2AE7FF00FB34C1 /* Questions */ = {
+			isa = PBXGroup;
+			children = (
+				2703856F1DE4E668009D6540 /* Question.swift */,
+				2776B5B41E2AE60E00FB34C1 /* QuestionDao.swift */,
+			);
+			name = Questions;
 			sourceTree = "<group>";
 		};
 		27BFBC7C1E05EC3D009FF425 /* Questions Data Base */ = {
@@ -171,10 +214,7 @@
 				27BFBC7D1E05EC58009FF425 /* SubjectsTableViewController.swift */,
 				27BFBC7F1E05EC64009FF425 /* CategoriesTableViewController.swift */,
 				27BFBC831E05EC84009FF425 /* AllTableViewController.swift */,
-				275EFA651E115EBD00CA1309 /* SubjectsTableViewCell.swift */,
-				275EFA671E11635C00CA1309 /* CategoriesTableViewCell.swift */,
 				2792FCCF1E12F78100748BF7 /* ShowQuestionViewController.swift */,
-				275EFA691E1163CB00CA1309 /* AllTableViewCell.swift */,
 			);
 			name = "Questions Data Base";
 			sourceTree = "<group>";
@@ -205,7 +245,6 @@
 				27E459F01DDDD6EE006099F4 /* Student */,
 				27E459EA1DDDC63F006099F4 /* MainMenu */,
 				27E459E71DDDC5DF006099F4 /* Core Data */,
-				27F67BE91DFC28A4003491A6 /* Icons */,
 				27FBD4631E24F1F300E11B3F /* Framework */,
 				27E459E61DDDC5CB006099F4 /* Supporting Files */,
 			);
@@ -227,14 +266,12 @@
 			isa = PBXGroup;
 			children = (
 				270385741DE4FA70009D6540 /* DaoManager.swift */,
-				2703856F1DE4E668009D6540 /* Question.swift */,
-				270385721DE4FA4C009D6540 /* Answer.swift */,
-				270241741E2024930043CBC3 /* Test.swift */,
-				27C575051E215EAC00AC17EC /* TmpPickedQuestions.swift */,
-				272CBE2E1E28E7F2001ACD90 /* TmpPickedTest.swift */,
-				27D972531E296E180053E044 /* StudentTest.swift */,
-				27D972551E296E770053E044 /* StudentQuestion.swift */,
-				27D972571E296F490053E044 /* StudentAnswer.swift */,
+				2776B5B61E2AE7FF00FB34C1 /* Questions */,
+				2776B5AF1E2AE3DB00FB34C1 /* Test */,
+				2776B5B11E2AE3F400FB34C1 /* Student Test */,
+				2776B5B01E2AE3E600FB34C1 /* Studen Test Answers */,
+				2776B5B31E2AE42600FB34C1 /* Tmp Picked Questions */,
+				2776B5B21E2AE41600FB34C1 /* Tmp Picked Test */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -263,6 +300,9 @@
 			isa = PBXGroup;
 			children = (
 				27E459EE1DDDD6DF006099F4 /* MainStudentViewController.swift */,
+				27B45E0A1E2A4DE6001ED028 /* StudentExamTableViewController.swift */,
+				27B45E101E2A70E6001ED028 /* StudentExamOpenQuestionViewController.swift */,
+				27B45E121E2A7123001ED028 /* StudentExamCloseQuestionViewController.swift */,
 			);
 			name = Student;
 			sourceTree = "<group>";
@@ -273,20 +313,8 @@
 				270385781DE78E0E009D6540 /* ExamViewController.swift */,
 				27A4FCB91E2662F40026FAAF /* ExamTestsViewController.swift */,
 				27A4FCBB1E2664320026FAAF /* ExamTestsTableViewController.swift */,
-				27A4FCBD1E2665290026FAAF /* ExamTestsTableViewCell.swift */,
 			);
 			name = Exam;
-			sourceTree = "<group>";
-		};
-		27F67BE91DFC28A4003491A6 /* Icons */ = {
-			isa = PBXGroup;
-			children = (
-				27F67BFA1DFC43DA003491A6 /* questionicon_22.png */,
-				27F67BFB1DFC43DA003491A6 /* questionicon_44.png */,
-				27F67BFC1DFC43DA003491A6 /* questionicon_64.png */,
-				27F67BFD1DFC43DA003491A6 /* questionicon_320.png */,
-			);
-			name = Icons;
 			sourceTree = "<group>";
 		};
 		27FBD4631E24F1F300E11B3F /* Framework */ = {
@@ -368,12 +396,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2717620E1E05838C004DEF8C /* Main.storyboard in Resources */,
-				27F67BFE1DFC43DA003491A6 /* questionicon_22.png in Resources */,
-				27F67BFF1DFC43DA003491A6 /* questionicon_44.png in Resources */,
-				27F67C001DFC43DA003491A6 /* questionicon_64.png in Resources */,
 				27E459DF1DDDC56C006099F4 /* LaunchScreen.storyboard in Resources */,
 				27E459F41DDE435A006099F4 /* Media.xcassets in Resources */,
-				27F67C011DFC43DA003491A6 /* questionicon_320.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,15 +425,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2702417C1E203C4E0043CBC3 /* PickQuestionTableViewController.swift in Sources */,
-				27C575081E216B9B00AC17EC /* PickedQuestionTableViewCell.swift in Sources */,
 				27E459E91DDDC62C006099F4 /* MainMenuViewController.swift in Sources */,
-				275EFA681E11635C00CA1309 /* CategoriesTableViewCell.swift in Sources */,
 				277203B11E22811200767C8A /* TestsDataBaseTableViewController.swift in Sources */,
-				277203BB1E22F40D00767C8A /* TestQuestionsTableViewCell.swift in Sources */,
 				27EE27B21E13F0C6001E74BC /* MainTeacherMenuViewController.swift in Sources */,
-				275EFA661E115EBD00CA1309 /* SubjectsTableViewCell.swift in Sources */,
+				2776B5B51E2AE60E00FB34C1 /* QuestionDao.swift in Sources */,
 				27BFBC801E05EC64009FF425 /* CategoriesTableViewController.swift in Sources */,
-				27D972581E296F490053E044 /* StudentAnswer.swift in Sources */,
 				270241751E2024930043CBC3 /* Test.swift in Sources */,
 				277203B71E22E68200767C8A /* TestDetailsViewController.swift in Sources */,
 				27E459EF1DDDD6DF006099F4 /* MainStudentViewController.swift in Sources */,
@@ -417,29 +437,33 @@
 				27C575061E215EAC00AC17EC /* TmpPickedQuestions.swift in Sources */,
 				270385751DE4FA70009D6540 /* DaoManager.swift in Sources */,
 				270241781E2028010043CBC3 /* NewTestViewController.swift in Sources */,
-				277203B51E22D85500767C8A /* TestsDataBaseTableViewCell.swift in Sources */,
+				2776B5AA1E2AE1B800FB34C1 /* TmpPickedTestDao.swift in Sources */,
 				27D972541E296E180053E044 /* StudentTest.swift in Sources */,
+				27B45E131E2A7123001ED028 /* StudentExamCloseQuestionViewController.swift in Sources */,
 				277203AF1E227F8E00767C8A /* TestsDataBaseViewController.swift in Sources */,
 				27FBD46D1E24F23F00E11B3F /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				2776B5A61E2ADE5500FB34C1 /* TestAnswerDao.swift in Sources */,
 				27E459D21DDDC56C006099F4 /* AppDelegate.swift in Sources */,
 				27A4FCBA1E2662F40026FAAF /* ExamTestsViewController.swift in Sources */,
 				27FBD46F1E24F23F00E11B3F /* TPKeyboardAvoidingTableView.m in Sources */,
 				27FBD46E1E24F23F00E11B3F /* TPKeyboardAvoidingScrollView.m in Sources */,
+				27B45E0B1E2A4DE6001ED028 /* StudentExamTableViewController.swift in Sources */,
+				2776B5AE1E2AE3BF00FB34C1 /* TestDao.swift in Sources */,
 				277203B91E22F12F00767C8A /* TestQuestionsTableViewController.swift in Sources */,
 				272CBE2F1E28E7F2001ACD90 /* TmpPickedTest.swift in Sources */,
 				27A4FCBC1E2664320026FAAF /* ExamTestsTableViewController.swift in Sources */,
 				27BFBC841E05EC84009FF425 /* AllTableViewController.swift in Sources */,
-				270385731DE4FA4C009D6540 /* Answer.swift in Sources */,
 				270385791DE78E0E009D6540 /* ExamViewController.swift in Sources */,
 				27FBD4701E24F23F00E11B3F /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
-				27A4FCBE1E2665290026FAAF /* ExamTestsTableViewCell.swift in Sources */,
+				27B45E111E2A70E6001ED028 /* StudentExamOpenQuestionViewController.swift in Sources */,
 				2792FCD01E12F78100748BF7 /* ShowQuestionViewController.swift in Sources */,
 				27CB47951E0673710073BC31 /* TextFieldValidator.swift in Sources */,
+				2776B5AC1E2AE2C400FB34C1 /* TmpPickedQuestionsDao.swift in Sources */,
 				2702417A1E202A0C0043CBC3 /* AddNewTestViewController.swift in Sources */,
+				27B45E0D1E2A4F0B001ED028 /* TestAnswer.swift in Sources */,
+				2776B5A81E2AE0A500FB34C1 /* StudentTestDao.swift in Sources */,
 				276B10C51E0569340099FBBB /* AddOrEditQuestionViewController.swift in Sources */,
-				275EFA6A1E1163CB00CA1309 /* AllTableViewCell.swift in Sources */,
 				27BFBC7E1E05EC58009FF425 /* SubjectsTableViewController.swift in Sources */,
-				27D972561E296E770053E044 /* StudentQuestion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

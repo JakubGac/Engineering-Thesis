@@ -30,27 +30,27 @@ class PickQuestionTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        listOfPickedQuestionsID = DaoManager().getAllPickedQuestionsID()
+        listOfPickedQuestionsID = TmpPickedQuestionsDao().getAllPickedQuestionsID()
         
         sections.removeAll()
         listOfQuestions.removeAll()
         
         if let testType = typeOfTest {
             if typeOfQuestionsToDisplay == "all" {
-                let items = DaoManager().getAllQuestionsWithTestType(type: testType)
+                let items = QuestionDao().getAllQuestionsWithTestType(type: testType)
                 if !items.isEmpty {
                     listOfQuestions.append(items)
                 }
             } else if typeOfQuestionsToDisplay == "category" {
-                sections = DaoManager().getAllCategoriesWithTestType(type: testType)
+                sections = QuestionDao().getAllCategoriesWithTestType(type: testType)
                 for item in sections {
-                    let array = DaoManager().getQuestionWithCategoryAndTestType(category: item, type: testType)
+                    let array = QuestionDao().getQuestionWithCategoryAndTestType(category: item, type: testType)
                     listOfQuestions.append(array)
                 }
             } else if typeOfQuestionsToDisplay == "subject" {
-                sections = DaoManager().getAllSubjectsWithTestType(type: testType)
+                sections = QuestionDao().getAllSubjectsWithTestType(type: testType)
                 for item in sections {
-                    let array = DaoManager().getQuestionsWithSubjectAndTestType(subject: item, type: testType)
+                    let array = QuestionDao().getQuestionsWithSubjectAndTestType(subject: item, type: testType)
                     listOfQuestions.append(array)
                 }
             }
@@ -58,7 +58,7 @@ class PickQuestionTableViewController: UITableViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        DaoManager().addQuestionsIDToDatabase(list: listOfPickedQuestionsID)
+        TmpPickedQuestionsDao().addQuestionsIDToDatabase(list: listOfPickedQuestionsID)
     }
 
     // MARK: - Table view data source
@@ -131,6 +131,55 @@ class PickQuestionTableViewController: UITableViewController {
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+class PickedQuestionTableViewCell: UITableViewCell {
+    
+    // model
+    var question: Question? {
+        didSet {
+            updateUI()
+        }
+    }
+    
+    var picked: Bool = false {
+        didSet {
+            updateImage()
+        }
+    }
+    
+    var isEmpty: Bool? {
+        didSet {
+            cellLabel?.text = nil
+            cellImageView.alpha = 0
+            cellLabel?.text = "Brak pytań w bazie"
+        }
+    }
+    
+    @IBOutlet weak var cellLabel: UILabel!
+    @IBOutlet weak var cellImageView: UIImageView!
+    
+    private func updateUI() {
+        // reset any existing informations
+        cellLabel?.text = nil
+        cellImageView.alpha = 0
+        
+        if let question = self.question {
+            cellLabel.text = question.content
+        }
+    }
+    
+    private func updateImage() {
+        if cellImageView != nil {
+            let image = UIImage(named: "ok.png")
+            cellImageView.image = image
+            if picked {
+                cellImageView.alpha = 1
+            } else {
+                cellImageView.alpha = 0
             }
         }
     }

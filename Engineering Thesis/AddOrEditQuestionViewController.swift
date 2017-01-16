@@ -64,18 +64,18 @@ class AddOrEditQuestionViewController: UIViewController, UITextFieldDelegate, UI
                                                     if checkFourthAnswer() {
                                                         // close question, four answers
                                                         if question == nil {
-                                                            DaoManager().addNewQuestionToDatabase(category: category, subject: subject, numberOfPoints: Double(number)!, contentOfQuestion: questionContent, firstAnswerContent: firstAnswer, secondAnswerContent: secondAnswer, thirdAnswerContent: thirdAnswer, fourthAnswerContent: fourthAnswer, firstAnswerIsCorrect: firstAnswerSwitch?.isOn, secondAnswerIsCorrect: secondAnswerSwitch?.isOn, thirdAnswerIsCorrect: thirdAnswerSwitch?.isOn, fourthAnswerIsCorrect: fourthAnswerSwitch?.isOn)
+                                                            QuestionDao().addNewQuestionToDatabase(category: category, subject: subject, numberOfPoints: Double(number)!, contentOfQuestion: questionContent, firstAnswerContent: firstAnswer, secondAnswerContent: secondAnswer, thirdAnswerContent: thirdAnswer, fourthAnswerContent: fourthAnswer, firstAnswerIsCorrect: firstAnswerSwitch?.isOn, secondAnswerIsCorrect: secondAnswerSwitch?.isOn, thirdAnswerIsCorrect: thirdAnswerSwitch?.isOn, fourthAnswerIsCorrect: fourthAnswerSwitch?.isOn)
                                                         } else {
-                                                            DaoManager().editQuestion(question: question!, category: category, subject: subject, numberOfPoints: Double(number)!, contentOfQuestion: questionContent, firstAnswerContent: firstAnswer, secondAnswerContent: secondAnswer, thirdAnswerContent: thirdAnswer, fourthAnswerContent: fourthAnswer, firstAnswerIsCorrect: firstAnswerSwitch?.isOn, secondAnswerIsCorrect: secondAnswerSwitch?.isOn, thirdAnswerIsCorrect: thirdAnswerSwitch?.isOn, fourthAnswerIsCorrect: fourthAnswerSwitch?.isOn)
+                                                            QuestionDao().editQuestion(question: question!, category: category, subject: subject, numberOfPoints: Double(number)!, contentOfQuestion: questionContent, firstAnswerContent: firstAnswer, secondAnswerContent: secondAnswer, thirdAnswerContent: thirdAnswer, fourthAnswerContent: fourthAnswer, firstAnswerIsCorrect: firstAnswerSwitch?.isOn, secondAnswerIsCorrect: secondAnswerSwitch?.isOn, thirdAnswerIsCorrect: thirdAnswerSwitch?.isOn, fourthAnswerIsCorrect: fourthAnswerSwitch?.isOn)
                                                         }
                                                         printSafeAllert()
                                                     }
                                                 } else {
                                                     // pytanie zamknięte, 3 odpowiedzi
                                                     if question == nil {
-                                                        DaoManager().addNewQuestionToDatabase(category: category, subject: subject, numberOfPoints: Double(number)!, contentOfQuestion: questionContent, firstAnswerContent: firstAnswer, secondAnswerContent: secondAnswer, thirdAnswerContent: thirdAnswer, fourthAnswerContent: nil, firstAnswerIsCorrect: firstAnswerSwitch?.isOn, secondAnswerIsCorrect: secondAnswerSwitch?.isOn, thirdAnswerIsCorrect: thirdAnswerSwitch?.isOn, fourthAnswerIsCorrect: nil)
+                                                        QuestionDao().addNewQuestionToDatabase(category: category, subject: subject, numberOfPoints: Double(number)!, contentOfQuestion: questionContent, firstAnswerContent: firstAnswer, secondAnswerContent: secondAnswer, thirdAnswerContent: thirdAnswer, fourthAnswerContent: nil, firstAnswerIsCorrect: firstAnswerSwitch?.isOn, secondAnswerIsCorrect: secondAnswerSwitch?.isOn, thirdAnswerIsCorrect: thirdAnswerSwitch?.isOn, fourthAnswerIsCorrect: nil)
                                                     } else {
-                                                        DaoManager().editQuestion(question: question!, category: category, subject: subject, numberOfPoints: Double(number)!, contentOfQuestion: questionContent, firstAnswerContent: firstAnswer, secondAnswerContent: secondAnswer, thirdAnswerContent: thirdAnswer, fourthAnswerContent: nil, firstAnswerIsCorrect: firstAnswerSwitch?.isOn, secondAnswerIsCorrect: secondAnswerSwitch?.isOn, thirdAnswerIsCorrect: thirdAnswerSwitch?.isOn, fourthAnswerIsCorrect: nil)
+                                                        QuestionDao().editQuestion(question: question!, category: category, subject: subject, numberOfPoints: Double(number)!, contentOfQuestion: questionContent, firstAnswerContent: firstAnswer, secondAnswerContent: secondAnswer, thirdAnswerContent: thirdAnswer, fourthAnswerContent: nil, firstAnswerIsCorrect: firstAnswerSwitch?.isOn, secondAnswerIsCorrect: secondAnswerSwitch?.isOn, thirdAnswerIsCorrect: thirdAnswerSwitch?.isOn, fourthAnswerIsCorrect: nil)
                                                     }
                                                     printSafeAllert()
                                                 }
@@ -83,9 +83,9 @@ class AddOrEditQuestionViewController: UIViewController, UITextFieldDelegate, UI
                                         }  else {
                                             // pytanie zamknięte, 2 odpowiedzi
                                             if question == nil {
-                                                DaoManager().addNewQuestionToDatabase(category: category, subject: subject, numberOfPoints: Double(number)!, contentOfQuestion: questionContent, firstAnswerContent: firstAnswer, secondAnswerContent: secondAnswer, thirdAnswerContent: nil, fourthAnswerContent: nil, firstAnswerIsCorrect:  firstAnswerSwitch?.isOn, secondAnswerIsCorrect: secondAnswerSwitch?.isOn, thirdAnswerIsCorrect: nil, fourthAnswerIsCorrect: nil)
+                                                QuestionDao().addNewQuestionToDatabase(category: category, subject: subject, numberOfPoints: Double(number)!, contentOfQuestion: questionContent, firstAnswerContent: firstAnswer, secondAnswerContent: secondAnswer, thirdAnswerContent: nil, fourthAnswerContent: nil, firstAnswerIsCorrect:  firstAnswerSwitch?.isOn, secondAnswerIsCorrect: secondAnswerSwitch?.isOn, thirdAnswerIsCorrect: nil, fourthAnswerIsCorrect: nil)
                                             } else {
-                                                DaoManager().editQuestion(question: question!, category: category, subject: subject, numberOfPoints: Double(number)!, contentOfQuestion: questionContent, firstAnswerContent: firstAnswer, secondAnswerContent: secondAnswer, thirdAnswerContent: nil, fourthAnswerContent: nil, firstAnswerIsCorrect: firstAnswerSwitch?.isOn, secondAnswerIsCorrect: secondAnswerSwitch?.isOn, thirdAnswerIsCorrect: nil, fourthAnswerIsCorrect: nil)
+                                                QuestionDao().editQuestion(question: question!, category: category, subject: subject, numberOfPoints: Double(number)!, contentOfQuestion: questionContent, firstAnswerContent: firstAnswer, secondAnswerContent: secondAnswer, thirdAnswerContent: nil, fourthAnswerContent: nil, firstAnswerIsCorrect: firstAnswerSwitch?.isOn, secondAnswerIsCorrect: secondAnswerSwitch?.isOn, thirdAnswerIsCorrect: nil, fourthAnswerIsCorrect: nil)
                                             }
                                             printSafeAllert()
                                         }
@@ -94,9 +94,9 @@ class AddOrEditQuestionViewController: UIViewController, UITextFieldDelegate, UI
                             } else {
                                 // pytanie otwarte
                                 if question == nil {
-                                    DaoManager().addNewQuestionToDatabase(category: category, subject: subject, numberOfPoints: Double(number)!, contentOfQuestion: questionContent, firstAnswerContent: nil, secondAnswerContent: nil, thirdAnswerContent: nil, fourthAnswerContent: nil, firstAnswerIsCorrect: nil, secondAnswerIsCorrect: nil, thirdAnswerIsCorrect: nil, fourthAnswerIsCorrect: nil)
+                                    QuestionDao().addNewQuestionToDatabase(category: category, subject: subject, numberOfPoints: Double(number)!, contentOfQuestion: questionContent, firstAnswerContent: nil, secondAnswerContent: nil, thirdAnswerContent: nil, fourthAnswerContent: nil, firstAnswerIsCorrect: nil, secondAnswerIsCorrect: nil, thirdAnswerIsCorrect: nil, fourthAnswerIsCorrect: nil)
                                 } else {
-                                    DaoManager().editQuestion(question: question!, category: category, subject: subject, numberOfPoints: Double(number)!, contentOfQuestion: questionContent, firstAnswerContent: nil, secondAnswerContent: nil, thirdAnswerContent: nil, fourthAnswerContent: nil, firstAnswerIsCorrect: nil, secondAnswerIsCorrect: nil, thirdAnswerIsCorrect: nil, fourthAnswerIsCorrect: nil)
+                                    QuestionDao().editQuestion(question: question!, category: category, subject: subject, numberOfPoints: Double(number)!, contentOfQuestion: questionContent, firstAnswerContent: nil, secondAnswerContent: nil, thirdAnswerContent: nil, fourthAnswerContent: nil, firstAnswerIsCorrect: nil, secondAnswerIsCorrect: nil, thirdAnswerIsCorrect: nil, fourthAnswerIsCorrect: nil)
                                 }
                                 printSafeAllert()
                             }
@@ -170,8 +170,8 @@ class AddOrEditQuestionViewController: UIViewController, UITextFieldDelegate, UI
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        categoryPromps = DaoManager().getAllCategories()
-        subjectPromps = DaoManager().getAllSubjects()
+        categoryPromps = QuestionDao().getAllCategories()
+        subjectPromps = QuestionDao().getAllSubjects()
     }
     
     private func displayContent() {

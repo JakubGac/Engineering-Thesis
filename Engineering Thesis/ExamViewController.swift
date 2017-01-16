@@ -39,14 +39,14 @@ class ExamViewController: UIViewController {
         setButtonLook(button: showTestsButton)
         setButtonLook(button: shareTestButton)
         
-        if let item = DaoManager().getPickedTestID().first {
-            test = DaoManager().getTestWithID(id: item)
+        if let item = TmpPickedTestDao().getPickedTestID().first {
+            test = TestDao().getTestWithID(id: item)
             url = exportToFileUrl()
             setTimer(duration: test!.duration)
         }
         
         // pomonicze 
-        DaoManager().clearStudentTest()
+        StudentTestDao().clearStudentTest()
     }
     
     private func setTimer(duration: Int) {
@@ -91,7 +91,7 @@ class ExamViewController: UIViewController {
     }
     
     @IBAction func startStopButtonPressed(_ sender: UIButton) {
-        if test == nil || DaoManager().getPickedTestID().count == 0 {
+        if test == nil || TmpPickedTestDao().getPickedTestID().count == 0 {
             printErrorAlert(alertMessage: "Nie wybrałeś żadnego testu!")
         } else {
             //timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
@@ -99,7 +99,7 @@ class ExamViewController: UIViewController {
     }
     
     @IBAction func sharedButtonPressed(_ sender: UIButton) {
-        if test == nil || DaoManager().getPickedTestID().count == 0 {
+        if test == nil || TmpPickedTestDao().getPickedTestID().count == 0 {
             printErrorAlert(alertMessage: "Nie wybrałeś żadnego testu!")
         } else {
             if let url = exportToFileUrl() {

@@ -33,7 +33,7 @@ class NewTestViewController: UIViewController {
         
         // czyścimy tabelę tymczasową z wybranymi plikami
         // jeżeli użytkownik nie zapisał testu
-        DaoManager().cleareTmpPickedQuestionsTable()
+        TmpPickedQuestionsDao().cleareTmpPickedQuestionsTable()
     }
     
     @IBAction func typeOfQuestionsButtonPressed(_ sender: UIButton) {

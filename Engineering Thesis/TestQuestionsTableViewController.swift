@@ -29,7 +29,7 @@ class TestQuestionsTableViewController: UITableViewController {
     
     private func updateInfo() {
         if let id = testID {
-            listOfQuestions = DaoManager().getQuestionsWithTestID(id: id)
+            listOfQuestions = TestDao().getQuestionsWithTestID(id: id)
         }
     }
     
@@ -74,6 +74,35 @@ class TestQuestionsTableViewController: UITableViewController {
             if let nvc = segue.destination as? ShowQuestionViewController {
                 nvc.question = sender as? Question
             }
+        }
+    }
+}
+
+class TestQuestionsTableViewCell: UITableViewCell {
+    
+    // model
+    var question: Question? {
+        didSet {
+            updateUI()
+        }
+    }
+    
+    var isEmpty: Bool? {
+        didSet {
+            cellLabel?.text = nil
+            cellLabel?.text = "Brak pytań w bazie"
+            self.accessoryType = .none
+        }
+    }
+    
+    @IBOutlet weak var cellLabel: UILabel!
+    
+    private func updateUI() {
+        // reset any existing informations
+        cellLabel?.text = nil
+        
+        if let question = question {
+            cellLabel.text = question.content
         }
     }
 }

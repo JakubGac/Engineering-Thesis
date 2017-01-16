@@ -33,9 +33,9 @@ class CategoriesTableViewController: UITableViewController {
         items.removeAll()
         
         // add new data
-        sections = DaoManager().getAllCategories()
+        sections = QuestionDao().getAllCategories()
         for item in sections {
-            let array = DaoManager().getQuestionWithCategory(category: item)
+            let array = QuestionDao().getQuestionWithCategory(category: item)
             items.append(array)
         }
         tableView.reloadData()
@@ -66,7 +66,7 @@ class CategoriesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             if editingStyle == .delete {
-                DaoManager().deleteQuestion(questionToDelete: items[indexPath.section][indexPath.row])
+                QuestionDao().deleteQuestion(questionToDelete: items[indexPath.section][indexPath.row])
             }
             getData()
         }
@@ -89,4 +89,26 @@ class CategoriesTableViewController: UITableViewController {
             }
         }
     }
+}
+
+class CategoriesTableViewCell: UITableViewCell {
+    
+    // model
+    var question: Question? {
+        didSet {
+            updateUI()
+        }
+    }
+    
+    @IBOutlet weak var cellLabel: UILabel!
+    
+    private func updateUI() {
+        // reset any existing informations
+        cellLabel?.text = nil
+        
+        if let question = self.question {
+            cellLabel.text = question.content
+        }
+    }
+    
 }

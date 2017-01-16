@@ -19,3 +19,9 @@ class Question: Object {
     var answers = List<Answer>()
     let test = LinkingObjects(fromType: Test.self, property: "questions")
 }
+
+class Answer: Object {
+    dynamic var content = ""
+    dynamic var isCorrect = false
+    let question = LinkingObjects(fromType: Question.self, property: "answers")
+}

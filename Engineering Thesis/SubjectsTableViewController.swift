@@ -36,9 +36,9 @@ class SubjectsTableViewController: UITableViewController {
         items.removeAll()
         
         // add new data
-        sections = DaoManager().getAllSubjects()
+        sections = QuestionDao().getAllSubjects()
         for item in sections {
-            let array = DaoManager().getQuestionsWithSubject(subject: item)
+            let array = QuestionDao().getQuestionsWithSubject(subject: item)
             items.append(array)
         }
         
@@ -70,7 +70,7 @@ class SubjectsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             if editingStyle == .delete {
-                DaoManager().deleteQuestion(questionToDelete: items[indexPath.section][indexPath.row])
+                QuestionDao().deleteQuestion(questionToDelete: items[indexPath.section][indexPath.row])
             }
             getData()
         }
@@ -93,6 +93,27 @@ class SubjectsTableViewController: UITableViewController {
             if let nvc = segue.destination as? ShowQuestionViewController {
                 nvc.question = sender as? Question
             }
+        }
+    }
+}
+
+class SubjectsTableViewCell: UITableViewCell {
+    
+    // model
+    var question: Question? {
+        didSet {
+            updateUI()
+        }
+    }
+    
+    @IBOutlet weak var cellLabel: UILabel!
+    
+    private func updateUI() {
+        // reset any existing informations
+        cellLabel?.text = nil
+        
+        if let question = self.question {
+            cellLabel.text = question.content
         }
     }
 }

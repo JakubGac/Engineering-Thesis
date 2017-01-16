@@ -33,30 +33,30 @@ class ExamTestsTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        listOfPickedTestID = DaoManager().getPickedTestID()
+        listOfPickedTestID = TmpPickedTestDao().getPickedTestID()
         
         if let item = testName {
             // self.title do zmiany
             switch item {
             case Storyboard.openTest:
-                let tmp = DaoManager().getOpenTests()
+                let tmp = TestDao().getOpenTests()
                 if !tmp.isEmpty {
                     listsOfTests.append(tmp)
                 }
             case Storyboard.closeTest:
-                let tmp = DaoManager().getCloseTests()
+                let tmp = TestDao().getCloseTests()
                 if !tmp.isEmpty {
                     listsOfTests.append(tmp)
                 }
             case Storyboard.mixedTest:
-                let tmp = DaoManager().getMixedTests()
+                let tmp = TestDao().getMixedTests()
                 if !tmp.isEmpty {
                     listsOfTests.append(tmp)
                 }
             case Storyboard.subjectsTest:
-                sections = DaoManager().getTestsSubjects()
+                sections = TestDao().getTestsSubjects()
                 for item in sections {
-                    listsOfTests.append(DaoManager().getTestsWithSubject(subject: item))
+                    listsOfTests.append(TestDao().getTestsWithSubject(subject: item))
                 }
             default: break
             }
@@ -64,7 +64,7 @@ class ExamTestsTableViewController: UITableViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        DaoManager().addTestIDToDatabase(list: listOfPickedTestID)
+        TmpPickedTestDao().addTestIDToDatabase(list: listOfPickedTestID)
     }
     
     // MARK: - Table view data source
@@ -129,6 +129,55 @@ class ExamTestsTableViewController: UITableViewController {
                         printErrorAlert(alertMessage: "Nie możesz wybrać więcej niż jednego testu!")
                     }
                 }
+            }
+        }
+    }
+}
+
+class ExamTestsTableViewCell: UITableViewCell {
+    
+    // model
+    var test: Test? {
+        didSet {
+            updateUI()
+        }
+    }
+    
+    var picked: Bool = false {
+        didSet {
+            updateImage()
+        }
+    }
+    
+    var isEmpty: Bool? {
+        didSet {
+            cellLabel?.text = nil
+            cellImage?.alpha = 0
+            cellLabel?.text = "Brak pytań w bazie"
+        }
+    }
+    
+    @IBOutlet weak var cellLabel: UILabel!
+    @IBOutlet weak var cellImage: UIImageView!
+    
+    private func updateUI() {
+        // reset any existing informations
+        cellLabel?.text = nil
+        cellImage?.alpha = 0
+        
+        if let test = self.test {
+            cellLabel.text = test.name
+        }
+    }
+    
+    private func updateImage() {
+        if cellImage != nil {
+            let image = UIImage(named: "ok.png")
+            cellImage.image = image
+            if picked {
+                cellImage.alpha = 1
+            } else {
+                cellImage.alpha = 0
             }
         }
     }

@@ -36,24 +36,24 @@ class TestsDataBaseTableViewController: UITableViewController {
             
             switch item {
             case Storyboard.openTest:
-                let tmp = DaoManager().getOpenTests()
+                let tmp = TestDao().getOpenTests()
                 if !tmp.isEmpty {
                     listsOfTests.append(tmp)
                 }
             case Storyboard.closeTest:
-                let tmp = DaoManager().getCloseTests()
+                let tmp = TestDao().getCloseTests()
                 if !tmp.isEmpty {
                     listsOfTests.append(tmp)
                 }
             case Storyboard.mixedTest:
-                let tmp = DaoManager().getMixedTests()
+                let tmp = TestDao().getMixedTests()
                 if !tmp.isEmpty {
                     listsOfTests.append(tmp)
                 }
             case Storyboard.subjectsTest:
-                sections = DaoManager().getTestsSubjects()
+                sections = TestDao().getTestsSubjects()
                 for item in sections {
-                    listsOfTests.append(DaoManager().getTestsWithSubject(subject: item))
+                    listsOfTests.append(TestDao().getTestsWithSubject(subject: item))
                 }
             default: break
             }
@@ -124,6 +124,35 @@ class TestsDataBaseTableViewController: UITableViewController {
             if let nvc = segue.destination as? TestDetailsViewController {
                 nvc.test = sender as? Test
             }
+        }
+    }
+}
+
+class TestsDataBaseTableViewCell: UITableViewCell {
+    
+    // model
+    var test: Test? {
+        didSet {
+            updateUI()
+        }
+    }
+    
+    var isEmpty: Bool? {
+        didSet {
+            cellLabel?.text = nil
+            cellLabel?.text = "Brak testów w bazie"
+            self.accessoryType = .none
+        }
+    }
+    
+    @IBOutlet weak var cellLabel: UILabel!
+    
+    private func updateUI() {
+        // reset any existing informations
+        cellLabel?.text = nil
+        
+        if let test = test {
+            cellLabel.text = test.name
         }
     }
 }

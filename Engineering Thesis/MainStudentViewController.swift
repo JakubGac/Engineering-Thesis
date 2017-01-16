@@ -14,9 +14,12 @@ class MainStudentViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var startExamButton: UIButton!
     
+    private var doesExamLast: Bool = false
+    
     private struct Storyboard {
         static let startExamButton = "Rozpocznij"
-        static let StartExamSegue = "StartExam"
+        static let continuesExamButton = "Kontynuuj"
+        static let StartExamSegue = "Start Exam Segue"
         static let lackOfTestInDatabase = "Brak testu w bazie!"
         static let testSavedCorectly = "Test zapisany prawidłowo"
     }
@@ -26,19 +29,35 @@ class MainStudentViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        doesExamLast = StudentTestDao().checkIfStudentTestLast()
+        
         setButtonLook(button: startExamButton)
-        if DaoManager().checkIfStudentTestExist() {
+        
+        if doesExamLast {
+            startExamButton.setTitle(Storyboard.continuesExamButton, for: .normal)
+        } else {
+            startExamButton.setTitle(Storyboard.startExamButton, for: .normal)
+        }
+        
+        if StudentTestDao().checkIfStudentTestExist() {
             label.text = Storyboard.testSavedCorectly
         } else {
             label.text = Storyboard.lackOfTestInDatabase
         }
     }
     
-    @IBAction func startExamButtonPressed(_ sender: Any) {
+    @IBAction func startExamButtonPressed(_ sender: UIButton) {
         if label.text == Storyboard.lackOfTestInDatabase {
-            printErrorAlert(alertMessage: "Brak testu w bazie!")
+            printErrorAlert(alertMessage: Storyboard.lackOfTestInDatabase)
         } else {
-            print(DaoManager().getStudentTest())
+            if let buttonText = sender.currentTitle {
+                if buttonText == Storyboard.startExamButton && doesExamLast == false {
+                    StudentTestDao().setStudentTestLast()
+                    performSegue(withIdentifier: Storyboard.StartExamSegue, sender: nil)
+                } else if buttonText == Storyboard.continuesExamButton && doesExamLast == true {
+                    performSegue(withIdentifier: Storyboard.StartExamSegue, sender: nil)
+                }
+            }
         }
     }
 }

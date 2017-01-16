@@ -42,7 +42,7 @@ class MainTeacherMenuViewController: UIViewController {
                 performSegue(withIdentifier: Storyboard.showTestsDataBaseSegue, sender: nil)
             } else if buttonText == Storyboard.examButton {
                 // czyścimy tablę z tymczasowym ID testu
-                DaoManager().cleareTmpPickedTestTable()
+                TmpPickedTestDao().cleareTmpPickedTestTable()
                 performSegue(withIdentifier: Storyboard.examSegue, sender: nil)
             }
         }

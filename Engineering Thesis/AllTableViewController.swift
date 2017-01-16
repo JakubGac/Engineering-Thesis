@@ -30,7 +30,7 @@ class AllTableViewController: UITableViewController, UISearchBarDelegate {
         questionsList.removeAll()
         
         // add new data
-        questionsList = DaoManager().getAllQuestions()
+        questionsList = QuestionDao().getAllQuestions()
         questionsList.sort { $0.content < $1.content }
         tableView.reloadData()
     }
@@ -68,7 +68,7 @@ class AllTableViewController: UITableViewController, UISearchBarDelegate {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            DaoManager().deleteQuestion(questionToDelete: questionsList[indexPath.row])
+            QuestionDao().deleteQuestion(questionToDelete: questionsList[indexPath.row])
         }
         getData()
     }
@@ -119,6 +119,27 @@ class AllTableViewController: UITableViewController, UISearchBarDelegate {
             if let nvc = segue.destination as? ShowQuestionViewController {
                 nvc.question = sender as? Question
             }
+        }
+    }
+}
+
+class AllTableViewCell: UITableViewCell {
+    
+    // model
+    var question: Question? {
+        didSet {
+            updateUI()
+        }
+    }
+    
+    @IBOutlet weak var cellLabel: UILabel!
+    
+    private func updateUI() {
+        // reset any existing informations
+        cellLabel?.text = nil
+        
+        if let question = self.question {
+            cellLabel.text = question.content
         }
     }
 }

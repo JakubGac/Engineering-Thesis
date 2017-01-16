@@ -74,9 +74,9 @@ class AddNewTestViewController: UIViewController, UITextFieldDelegate {
             if tfv.checkIfFieldIsFilled(view: durationOfTestTextField) && tfv.checkIfFieldContainsNumbers(view: durationOfTestTextField) {
                 if tfv.checkIfFieldIsFilled(view: totalAmountOfQuestionsTextField) && tfv.checkIfFieldContainsNumbers(view: totalAmountOfQuestionsTextField) {
                     if tfv.checkIfFieldIsFilled(view: numberOfQuestionsForOneStudentTextField) && tfv.checkIfFieldContainsNumbers(view: numberOfQuestionsForOneStudentTextField) {
-                        let questionsListID = DaoManager().getAllPickedQuestionsID()
+                        let questionsListID = TmpPickedQuestionsDao().getAllPickedQuestionsID()
                         if questionsListID.count == Int(totalAmountOfQuestionsTextField.text!) {
-                            DaoManager().addNewTestToDatabase(type: typeOfTest!, name: testNameTextField.text!, duration: Int(durationOfTestTextField.text!)!,totalAmountOfQuestions: Int(totalAmountOfQuestionsTextField.text!)!, amountOfQuestionsPerStudent: Int(numberOfQuestionsForOneStudentTextField.text!)!, listOfQuestionsID: questionsListID)
+                            TestDao().addNewTestToDatabase(type: typeOfTest!, name: testNameTextField.text!, duration: Int(durationOfTestTextField.text!)!,totalAmountOfQuestions: Int(totalAmountOfQuestionsTextField.text!)!, amountOfQuestionsPerStudent: Int(numberOfQuestionsForOneStudentTextField.text!)!, listOfQuestionsID: questionsListID)
                             printSafeAllert()
                         } else {
                             let message = "Wybrano: " + String(questionsListID.count) + " z " + totalAmountOfQuestionsTextField.text! + " pytań!"
@@ -92,10 +92,10 @@ class AddNewTestViewController: UIViewController, UITextFieldDelegate {
         if textField == totalAmountOfQuestionsTextField {
             if let number = totalAmountOfQuestionsTextField.text {
                 if number != "" {
-                    if Int(number)! > DaoManager().getAmountOfQuestionsInDatabaseWithTestType(type: typeOfTest!) {
+                    if Int(number)! > QuestionDao().getAmountOfQuestionsInDatabaseWithTestType(type: typeOfTest!) {
                         printErrorAlert(alertMessage: "W bazie nie ma tylu pytań!")
                         totalAmountOfQuestionsTextField.text = ""
-                        DaoManager().cleareTmpPickedQuestionsTable()
+                        TmpPickedQuestionsDao().cleareTmpPickedQuestionsTable()
                     }
                 }
             }
