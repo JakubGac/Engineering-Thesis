@@ -38,15 +38,17 @@ class StudentExamOpenQuestionViewController: UIViewController, UITextViewDelegat
             }
             questionNameLabel.text = "Pytanie otwarte za " + String(question.points) + " pkt"
             questionContentLabel.text = question.content
+            questionContentLabel.numberOfLines = 4
             
-            if let answer = answer {
-                if let content = answer.answer {
-                    questionAnswerTextView.text = content
+            if let item = answer {
+                if item.answer == "Brak odpowiedzi" {
+                    questionAnswerTextView.text = "Wpisz tutaj swoją odpowiedź"
+                } else {
+                    questionAnswerTextView.text = item.answer
                 }
             }  else {
                 questionAnswerTextView.text = "Wpisz tutaj swoją odpowiedź"
             }
-            
         }
     }
     
@@ -55,7 +57,7 @@ class StudentExamOpenQuestionViewController: UIViewController, UITextViewDelegat
             if answer != nil {
                 // istnieje już odpowiedź dla tego pytania
                 if questionAnswerTextView.text == "" || questionAnswerTextView.text == "Wpisz tutaj swoją odpowiedź" {
-                    TestAnswerDao().saveOpenAnswer(questionID: question.id, answer: nil)
+                    TestAnswerDao().saveOpenAnswer(questionID: question.id, answer: "Brak odpowiedzi")
                 } else {
                     TestAnswerDao().saveOpenAnswer(questionID: question.id, answer: questionAnswerTextView.text)
                 }
@@ -63,6 +65,8 @@ class StudentExamOpenQuestionViewController: UIViewController, UITextViewDelegat
                 // brak odpowiedzi dla tego pytania, tworzymy nową
                 if !(questionAnswerTextView.text == "") && !(questionAnswerTextView.text == "Wpisz tutaj swoją odpowiedź") {
                     TestAnswerDao().saveOpenAnswer(questionID: question.id, answer: questionAnswerTextView.text)
+                } else {
+                    TestAnswerDao().saveOpenAnswer(questionID: question.id, answer: "Brak odpowiedzi")
                 }
             }
             _ = self.navigationController?.popViewController(animated: true)

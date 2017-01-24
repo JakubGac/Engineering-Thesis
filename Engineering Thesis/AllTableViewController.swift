@@ -33,6 +33,7 @@ class AllTableViewController: UITableViewController, UISearchBarDelegate {
         questionsList = QuestionDao().getAllQuestions()
         questionsList.sort { $0.content < $1.content }
         tableView.reloadData()
+        tableView.tableFooterView = UIView()
     }
     
     override func viewDidLoad() {

@@ -13,14 +13,18 @@ class MainTeacherMenuViewController: UIViewController {
     @IBOutlet weak var questionsDataBaseButton: UIButton!
     @IBOutlet weak var testsDataBaseButton: UIButton!
     @IBOutlet weak var examButton: UIButton!
+    @IBOutlet weak var answersButton: UIButton!
     
     private struct Storyboard {
         static let showQuestionsDataBaseSegue = "Show Questions Data Base"
         static let showTestsDataBaseSegue = "Show Tests Data Base"
         static let examSegue = "Exam Segue"
+        static let showAnswersSegue = "Show List Of Answers"
+        
         static let showQuestionsDataBaseButton = "Baza pytań"
         static let showTestsDataBaseButton = "Baza testów"
         static let examButton = "Egzamin"
+        static let answersButton = "Odpowiedzi"
     }
     
     override func viewDidLoad() {
@@ -32,6 +36,7 @@ class MainTeacherMenuViewController: UIViewController {
         setButtonLook(button: questionsDataBaseButton)
         setButtonLook(button: testsDataBaseButton)
         setButtonLook(button: examButton)
+        setButtonLook(button: answersButton)
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -44,6 +49,8 @@ class MainTeacherMenuViewController: UIViewController {
                 // czyścimy tablę z tymczasowym ID testu
                 TmpPickedTestDao().cleareTmpPickedTestTable()
                 performSegue(withIdentifier: Storyboard.examSegue, sender: nil)
+            } else if buttonText == Storyboard.answersButton {
+                performSegue(withIdentifier: Storyboard.showAnswersSegue, sender: nil)
             }
         }
     }

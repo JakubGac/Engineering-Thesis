@@ -17,6 +17,7 @@ class StudentTest: Object {
     var listOfQuestions = List<StudentQuestion>()
     
     dynamic var doesTestLast = false
+    dynamic var doesTestDone = false
 }
 
 class StudentQuestion: Object {

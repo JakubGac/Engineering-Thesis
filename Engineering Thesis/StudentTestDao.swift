@@ -49,11 +49,46 @@ class StudentTestDao {
         return false
     }
     
+    // sprawdź czy dany test został już wykonany
+    func checkIfStudentTestIsDone() -> Bool {
+        if let item = Array(realm.objects(StudentTest.self).filter("id == %@", 0)).first {
+            return item.doesTestDone
+        }
+        return false
+    }
+    
     // ustaw test na "w trakcie wykonywania"
     func setStudentTestLast() {
         if let item = Array(realm.objects(StudentTest.self).filter("id == %@", 0)).first {
             try! realm.write {
                 item.doesTestLast = true
+            }
+        }
+    }
+    
+    // ustaw test na "zakończony"
+    func setStudentTestFinish() {
+        if let item = Array(realm.objects(StudentTest.self).filter("id == %@", 0)).first {
+            try! realm.write {
+                item.doesTestLast = false
+            }
+        }
+    }
+    
+    // ustaw test na "wykonany"
+    func setStudentTestIsDone() {
+        if let item = Array(realm.objects(StudentTest.self).filter("id == %@", 0)).first {
+            try! realm.write {
+                item.doesTestDone = true
+            }
+        }
+    }
+    
+    // zeruj ustawienie "wykonany" testu
+    func setStudentTestIsNotDone() {
+        if let item = Array(realm.objects(StudentTest.self).filter("id == %@", 0)).first {
+            try! realm.write {
+                item.doesTestDone = false
             }
         }
     }

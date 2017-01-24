@@ -22,6 +22,7 @@ class SubjectsTableViewController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.allowsSelection = true
+        tableView.tableFooterView = UIView()
     }
     
     override func viewWillAppear(_ animated: Bool) {

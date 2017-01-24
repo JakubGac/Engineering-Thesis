@@ -13,34 +13,26 @@ class TestAnswerDao {
     private var realm = try! Realm()
 
     // dodanie lub edycja odpowiedzi na otwarte pytanie
-    func saveOpenAnswer(questionID: Int, answer: String?) {
-        let answersIDsarray = getTestAnswersIDs()
+    func saveOpenAnswer(questionID: Int, answer: String) {
+        // zbieramy ID z bazy
+        let tmp = getTestAnswers()
+        var answersIDsarray = Array<Int>()
+        for item in tmp {
+            answersIDsarray.append(item.questionID)
+        }
         if answersIDsarray.contains(questionID) {
             // edytujemy istniejące pytanie więc wyciągamy je z bazy
             if let item = getAnswerWithQuestionId(id: questionID).first {
-                if answer == nil {
-                    // usuwamy odpowiedź
-                    try! realm.write {
-                        realm.delete(item)
-                    }
-                }
-                
-                if let answer = answer {
-                    // edytujemy odpowiedź
-                    try! realm.write {
-                        item.answer = answer
-                    }
+                // edytujemy odpowiedź
+                try! realm.write {
+                    item.answer = answer
                 }
             }
         } else {
             // dodajemy do bazy nowe pytanie
             let newAnswer = TestAnswer()
             newAnswer.questionID = questionID
-            
-            if let answer = answer {
-                newAnswer.answer = answer
-            }
-            
+            newAnswer.answer = answer
             try! realm.write {
                 realm.add(newAnswer)
             }
@@ -48,7 +40,7 @@ class TestAnswerDao {
     }
     
     // dodanie lub edycja odpowiedzi na zamknięte pytanie
-    func saveCloseAnswer(questionID: Int, closeAnswers: Array<StudentAnswer>) {
+    func saveCloseAnswer(questionID: Int, closeAnswers: Array<StudentCloseAnswer>) {
         let answersIdsArray = getTestAnswersIDs()
         if answersIdsArray.contains(questionID) {
             // edytujemy istniejące pytanie więc wyciągamy je z bazy
@@ -72,7 +64,7 @@ class TestAnswerDao {
             // dodajemy nowe pytanie
             let newAnswer = TestAnswer()
             newAnswer.questionID = questionID
-            let listOfAnswers = List<StudentAnswer>()
+            let listOfAnswers = List<StudentCloseAnswer>()
             for item in closeAnswers {
                 listOfAnswers.append(item)
             }
@@ -98,7 +90,15 @@ class TestAnswerDao {
         let tmp = getTestAnswers()
         var array = Array<Int>()
         for item in tmp {
-            array.append(item.questionID)
+            if item.closeAnswers.isEmpty {
+               // pytanie otwarte
+                if item.answer != "Brak odpowiedzi" {
+                    array.append(item.questionID)
+                }
+            } else {
+                // pytanie zamknięte
+                array.append(item.questionID)
+            }
         }
         return array
     }

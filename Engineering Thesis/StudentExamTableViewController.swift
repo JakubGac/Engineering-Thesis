@@ -94,6 +94,40 @@ class StudentExamTableViewController: UITableViewController {
             }
         }
     }
+    
+    // zakończ test
+    @IBAction func endTestButtonPressed(_ sender: Any) {
+        printSafeAllert()
+    }
+    
+    override func printSafeAllert() {
+        var alertMessage = ""
+        if let test = test {
+            if answersIDList.count < test.totalNumberOfQuestions {
+                alertMessage = "Odpowiedziałeś na " + String(answersIDList.count) + " z " + String(test.totalNumberOfQuestions) + " pytań. Czy na pewno chcesz zakończyć test?"
+            } else {
+                alertMessage = "Czy na pewno chcesz zakończyć test?"
+            }
+        }
+        let myAlert = UIAlertController(title: "Uwaga!", message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "Anuluj", style: UIAlertActionStyle.cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "Zakończ", style: UIAlertActionStyle.default) { (Action) in
+            self.finishTheExam()
+        }
+        myAlert.addAction(okAction)
+        myAlert.addAction(cancelAction)
+        self.present(myAlert, animated: true, completion: nil)
+    }
+    
+    // funcka kończąca test
+    private func finishTheExam() {
+        // ustawiamy w bazie egzamin jako zakończony oraz jako wykonany
+        // zatrzymujemy zegar
+        StudentTestDao().setStudentTestFinish()
+        StudentTestDao().setStudentTestIsDone()
+        UIApplication.shared.isIdleTimerDisabled = false
+        self.navigationController!.popViewController(animated: true)
+    }
 }
 
 class StudentExamTableViewCell: UITableViewCell {

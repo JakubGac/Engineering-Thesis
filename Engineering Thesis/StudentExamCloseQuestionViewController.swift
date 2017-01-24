@@ -13,7 +13,7 @@ class StudentExamCloseQuestionViewController: UIViewController, UITableViewDeleg
     // model
     var question: StudentQuestion?
     private var answer: TestAnswer?
-    private var listOfCloseAnswers = Array<StudentAnswer>()
+    private var listOfCloseAnswers = Array<StudentCloseAnswer>()
     
     @IBOutlet weak var questionNameLabel: UILabel!
     @IBOutlet weak var questionContentLabel: UILabel!
@@ -40,10 +40,10 @@ class StudentExamCloseQuestionViewController: UIViewController, UITableViewDeleg
             }
             questionNameLabel.text = "Pytanie zamknięte za " + String(question.points) + " pkt"
             questionContentLabel.text = question.content
+            questionContentLabel.numberOfLines = 4
         }
         
         answersTableView.reloadData()
-        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -60,19 +60,31 @@ class StudentExamCloseQuestionViewController: UIViewController, UITableViewDeleg
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.cellIdentifier, for: indexPath)
         if let question = question {
-            if !question.listOfAnswers.isEmpty {
-                if let answerCell = cell as? StudentExamAnswerCell {
-                    let studentAnswer = question.listOfAnswers[indexPath.row]
-                    answerCell.answer = studentAnswer
-                    if listOfCloseAnswers.contains(studentAnswer) {
-                        answerCell.isCorrect = true
-                    } else {
-                        answerCell.isCorrect = false
+            if let answerCell = cell as? StudentExamAnswerCell {
+                if !question.listOfAnswers.isEmpty {
+                    let answer = question.listOfAnswers[indexPath.row]
+                    var studentAnswer: StudentCloseAnswer?
+                    
+                    // ustawiamy treść pytania
+                    answerCell.answer = answer
+                    
+                    // sprawdzamy czy dana odpowiedź była już wcześniej wybrana
+                    for item in listOfCloseAnswers {
+                        if item.content == answer.content {
+                            // tak, była
+                            studentAnswer = item
+                        }
                     }
-                }
-            } else {
-                // brak odpowiedzi
-                if let answerCell = cell as? StudentExamAnswerCell {
+                
+                    // ustawiamy czy komórka jest prawdziwa czy nie
+                    if studentAnswer == nil {
+                        answerCell.isCorrect = false
+                    } else {
+                        answerCell.isCorrect = true
+                    }
+                    
+                } else {
+                    // brak odpowiedzi
                     answerCell.isEmpty = true
                 }
             }
@@ -84,23 +96,48 @@ class StudentExamCloseQuestionViewController: UIViewController, UITableViewDeleg
         let cell = tableView.cellForRow(at: indexPath)
         if let question = question {
             let answer = question.listOfAnswers[indexPath.row]
-            if listOfCloseAnswers.contains(answer) {
-                // odpowiedź już zaznaczona
-                if let answerCell = cell as? StudentExamAnswerCell {
-                    answerCell.isCorrect = false
+            var studentAnswer: StudentCloseAnswer?
+            
+            // sprawdzamy czy dana odpowiedź była już wcześniej wybrana
+            for item in listOfCloseAnswers {
+                if item.content == answer.content {
+                    // tak, była
+                    studentAnswer = item
                 }
-                listOfCloseAnswers.remove(at: listOfCloseAnswers.index(of: answer)!)
-            } else {
-                // zaznaczamy nową odpowiedź
-                if let answerCell = cell as? StudentExamAnswerCell {
+            }
+            
+            if let answerCell = cell as? StudentExamAnswerCell {
+                if studentAnswer == nil {
+                    // odpowiedź nie została wcześniej wybrana
+                    // dodajemy ja do listy odpowiedzi
+                    // i zaznaczamy wiersz jako wybrny
                     answerCell.isCorrect = true
+                        
+                    let newStudentAnswer = StudentCloseAnswer()
+                    newStudentAnswer.content = answer.content
+                    newStudentAnswer.isCorrect = true
+                    
+                    listOfCloseAnswers.append(newStudentAnswer)
+                } else {
+                    // odpowiedź została wcześniej wybrana
+                    // usuwamy ją z listy
+                    // i zaznaczamy wiersz jako niewybrany
+                    answerCell.isCorrect = false
+                    listOfCloseAnswers.remove(at: listOfCloseAnswers.index(of: studentAnswer!)!)
                 }
-                listOfCloseAnswers.append(answer)
             }
         }
     }
     
-    @IBAction func saveAnswerButtonPressed(_ sender: Any) {
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    @IBAction func saveQuestionButtonPressed(_ sender: Any) {
         if let question = question {
             TestAnswerDao().saveCloseAnswer(questionID: question.id, closeAnswers: listOfCloseAnswers)
             _ = self.navigationController?.popViewController(animated: true)
@@ -140,6 +177,7 @@ class StudentExamAnswerCell: UITableViewCell {
         if let answer = answer {
             cellLabel.text = answer.content
             cellImage.image = nil
+            cellLabel.numberOfLines = 0
         }
     }
     
@@ -153,5 +191,4 @@ class StudentExamAnswerCell: UITableViewCell {
             }
         }
     }
-    
 }

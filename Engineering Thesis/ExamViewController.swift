@@ -11,18 +11,14 @@ import UIKit
 class ExamViewController: UIViewController {
 
     @IBOutlet weak var clockLabel: UILabel!
-    @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet weak var startStopButton: UIButton!
     @IBOutlet weak var showTestsButton: UIButton!
     @IBOutlet weak var shareTestButton: UIButton!
+    @IBOutlet weak var chooseTestLabel: UILabel!
+    @IBOutlet weak var testLastTime: UILabel!
     
     private var format: DateFormatter!
-    private var countSeconds = 0
-    private var countMinutes = 0
-    private var countHours = 0
     private var timer = Timer()
     private var test: Test?
-    private var url: URL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,67 +31,24 @@ class ExamViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        setButtonLook(button: startStopButton)
         setButtonLook(button: showTestsButton)
         setButtonLook(button: shareTestButton)
         
         if let item = TmpPickedTestDao().getPickedTestID().first {
             test = TestDao().getTestWithID(id: item)
-            url = exportToFileUrl()
-            setTimer(duration: test!.duration)
         }
         
-        // pomonicze 
-        StudentTestDao().clearStudentTest()
-    }
-    
-    private func setTimer(duration: Int) {
-        let hours = duration / 60
-        if hours > 0 {
-            countHours = hours
-            countMinutes = duration - hours * 60
+        if let exam = test {
+            chooseTestLabel.text = exam.name
+            testLastTime.text = "Czas trwania egzaminu: \(exam.duration) minut"
         } else {
-            countMinutes = duration
+            testLastTime.text = "Czas trwania egzaminu: Brak wybranego testu"
+            chooseTestLabel.text = "Brak wybranego testu"
         }
-        printTime()
-    }
-    
-    @objc private func updateTimer() {
-        // do dopisania
-    }
-    
-    func printTime() {
-        var printHour = "00"
-        var printMinutes = "00"
-        var printSeconds = "00"
-        if countHours < 10 {
-            printHour = "0" + String(countHours)
-        } else {
-            printHour = String(countHours)
-        }
-        if countMinutes < 10 {
-            printMinutes = "0" + String(countMinutes)
-        } else {
-            printMinutes = String(countMinutes)
-        }
-        if countSeconds < 10 {
-            printSeconds = "0" + String(countSeconds)
-        } else {
-            printSeconds = String(countSeconds)
-        }
-        timerLabel.text = printHour + ":" + printMinutes + ":" + printSeconds
     }
     
     @objc private func updateClock(){
         clockLabel.text = format.string(from: Date())
-    }
-    
-    @IBAction func startStopButtonPressed(_ sender: UIButton) {
-        if test == nil || TmpPickedTestDao().getPickedTestID().count == 0 {
-            printErrorAlert(alertMessage: "Nie wybrałeś żadnego testu!")
-        } else {
-            //timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
-        }
     }
     
     @IBAction func sharedButtonPressed(_ sender: UIButton) {
@@ -182,7 +135,7 @@ class ExamViewController: UIViewController {
         return saveFileURL
     }
     
-    // segue
+    // segues
     private struct Storyboard {
         static let showTestsSegue = "Show Test Segue"
         static let showTestsButton = "Wybierz test"
