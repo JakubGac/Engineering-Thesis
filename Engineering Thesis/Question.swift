@@ -17,11 +17,9 @@ class Question: Object {
     dynamic var isOpen = false
     dynamic var numberOfPoints = 0.0
     var answers = List<Answer>()
-    let test = LinkingObjects(fromType: Test.self, property: "questions")
 }
 
 class Answer: Object {
     dynamic var content = ""
     dynamic var isCorrect = false
-    let question = LinkingObjects(fromType: Question.self, property: "answers")
 }

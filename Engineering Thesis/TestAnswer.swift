@@ -18,5 +18,4 @@ class TestAnswer: Object {
 class StudentCloseAnswer: Object {
     dynamic var content = ""
     dynamic var isCorrect = false
-    let testAnswer = LinkingObjects(fromType: TestAnswer.self, property: "closeAnswers")
 }
