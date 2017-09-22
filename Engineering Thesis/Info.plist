@@ -9,12 +9,10 @@
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
-			<key>LSItemContentTypes</key>
+			<key>CFBundleTypeExtensions</key>
 			<array>
-				<string>com.JG.testanswers.tean</string>
+				<string></string>
 			</array>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
 			<key>CFBundleTypeIconFiles</key>
 			<array>
 				<string>questionicon_22.png</string>
@@ -22,14 +20,16 @@
 				<string>questionicon_64.png</string>
 				<string>questionicon_320.png</string>
 			</array>
-			<key>CFBundleTypeExtensions</key>
-			<array>
-				<string></string>
-			</array>
 			<key>CFBundleTypeName</key>
 			<string>Test Answers Document</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 			<key>LSHandlerRank</key>
 			<string>Owner</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.JG.testanswers.tean</string>
+			</array>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -95,12 +95,12 @@
 	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>
-			<key>UTTypeDescription</key>
-			<string>Test Answers Document</string>
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>public.data</string>
 			</array>
+			<key>UTTypeDescription</key>
+			<string>Test Answers Document</string>
 			<key>UTTypeIdentifier</key>
 			<string>com.JG.testanswers.tean</string>
 			<key>UTTypeTagSpecification</key>

@@ -10,25 +10,25 @@ import Foundation
 import RealmSwift
 
 class StudentTest: Object {
-    dynamic var id = 0
-    dynamic var name = ""
-    dynamic var duration = 0
-    dynamic var totalNumberOfQuestions = 0
+    @objc dynamic var id = 0
+    @objc dynamic var name = ""
+    @objc dynamic var duration = 0
+    @objc dynamic var totalNumberOfQuestions = 0
     var listOfQuestions = List<StudentQuestion>()
     
-    dynamic var doesTestLast = false
-    dynamic var doesTestDone = false
+    @objc dynamic var doesTestLast = false
+    @objc dynamic var doesTestDone = false
 }
 
 class StudentQuestion: Object {
-    dynamic var id = 0
-    dynamic var content = ""
-    dynamic var isOpen = false
-    dynamic var points = 0.0
+    @objc dynamic var id = 0
+    @objc dynamic var content = ""
+    @objc dynamic var isOpen = false
+    @objc dynamic var points = 0.0
     var listOfAnswers = List<StudentAnswer>()
 }
 
 class StudentAnswer: Object {
-    dynamic var content = ""
-    dynamic var isCorrect = false
+    @objc dynamic var content = ""
+    @objc dynamic var isCorrect = false
 }

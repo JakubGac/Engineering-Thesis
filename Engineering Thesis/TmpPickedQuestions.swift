@@ -10,10 +10,10 @@ import Foundation
 import RealmSwift
 
 class TmpPickedQuestions: Object {
-    dynamic var id = 0
+    @objc dynamic var id = 0
     var listOfPickedQuestionsID = List<TmpQuestion>()
 }
 
 class TmpQuestion: Object {
-    dynamic var id = 0
+    @objc dynamic var id = 0
 }

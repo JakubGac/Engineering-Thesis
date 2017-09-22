@@ -30,7 +30,7 @@ class StudentTestDao {
     
     // pobranie ostatnie ID pytania
     func getLastStudentQuestionID() -> Int {
-        return Int(realm.objects(StudentQuestion.self).count.toIntMax())
+        return Int(realm.objects(StudentQuestion.self).endIndex)
     }
     
     // sprawdzenie czy w bazie istnieje test dla studenta

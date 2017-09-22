@@ -110,10 +110,10 @@ class TextFieldValidator {
         // automatyczny powrót
         shake.autoreverses = true
         
-        let fromPoint = CGPoint(x: textField.center.x - textField.center.x.divided(by: 40), y: textField.center.y)
+        let fromPoint = CGPoint(x: textField.center.x - textField.center.x / 40, y: textField.center.y)
         let fromValue = NSValue(cgPoint: fromPoint)
         
-        let toPoint = CGPoint(x: textField.center.x + textField.center.x.divided(by: 40), y: textField.center.y)
+        let toPoint = CGPoint(x: textField.center.x + textField.center.x / 40, y: textField.center.y)
         let toValue = NSValue(cgPoint: toPoint)
         
         shake.fromValue = fromValue

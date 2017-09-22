@@ -102,7 +102,7 @@ class TestDao {
     
     // pobranie ID ostatniego testu
     func getLastTestID() -> Int {
-        return Int(realm.objects(Test.self).count.toIntMax())
+        return Int(realm.objects(Test.self).endIndex)
     }
     
     // pobranie wszystkich testów

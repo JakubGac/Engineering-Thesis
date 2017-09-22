@@ -10,12 +10,12 @@ import Foundation
 import RealmSwift
 
 class TestAnswer: Object {
-    dynamic var questionID = 0
-    dynamic var answer = "Brak odpowiedzi"
+    @objc dynamic var questionID = 0
+    @objc dynamic var answer = "Brak odpowiedzi"
     var closeAnswers = List<StudentCloseAnswer>()
 }
 
 class StudentCloseAnswer: Object {
-    dynamic var content = ""
-    dynamic var isCorrect = false
+    @objc dynamic var content = ""
+    @objc dynamic var isCorrect = false
 }

@@ -97,10 +97,10 @@ class StudentExamTableViewController: UITableViewController {
     
     // zakończ test
     @IBAction func endTestButtonPressed(_ sender: Any) {
-        printSafeAllert()
+        //printSafeAllert()
     }
     
-    override func printSafeAllert() {
+    /*override func printSafeAllert() {
         var alertMessage = ""
         if let test = test {
             if answersIDList.count < test.totalNumberOfQuestions {
@@ -117,7 +117,7 @@ class StudentExamTableViewController: UITableViewController {
         myAlert.addAction(okAction)
         myAlert.addAction(cancelAction)
         self.present(myAlert, animated: true, completion: nil)
-    }
+    }*/
     
     // funcka kończąca test
     private func finishTheExam() {

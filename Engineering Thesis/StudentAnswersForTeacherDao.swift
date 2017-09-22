@@ -50,7 +50,7 @@ class StudentAnswersForTeacherDao {
     
     // pobranie ostatniego ID
     func getLastStudentAnswerForTeacherID() -> Int {
-        return Int(realm.objects(StudentAnswersForTeacher.self).count.toIntMax())
+        return Int(realm.objects(StudentAnswersForTeacher.self).endIndex)
     }
     
     // pobranie wszystkich odpowiedzi o nazwie testu

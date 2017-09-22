@@ -10,12 +10,12 @@ import Foundation
 import RealmSwift
 
 class Test: Object {
-    dynamic var id = 0
-    dynamic var type = ""
-    dynamic var name = ""
-    dynamic var subject = ""
-    dynamic var duration = 0
-    dynamic var totalNumberOfQuestions = 0
-    dynamic var numberOfQuestionsForOneStudent = 0
+    @objc dynamic var id = 0
+    @objc dynamic var type = ""
+    @objc dynamic var name = ""
+    @objc dynamic var subject = ""
+    @objc dynamic var duration = 0
+    @objc dynamic var totalNumberOfQuestions = 0
+    @objc dynamic var numberOfQuestionsForOneStudent = 0
     var questions = List<Question>()
 }

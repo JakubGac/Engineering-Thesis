@@ -37,14 +37,14 @@ class AddOrEditQuestionViewController: UIViewController, UITextFieldDelegate, UI
     private var autoCompleteForCategory = [String]()
     private var autoCompleteForSubject = [String]()
     
-    private let x = UIScreen.main.bounds.width.divided(by: 20)
-    private let y = UIScreen.main.bounds.height.divided(by: 40)
-    private let textFieldSizeWidth = CGFloat(UIScreen.main.bounds.width.divided(by: 1.7))
+    private let x = UIScreen.main.bounds.width / 20
+    private let y = UIScreen.main.bounds.height / 40
+    private let textFieldSizeWidth = CGFloat(UIScreen.main.bounds.width / 1.7)
     private let textFieldSizeHeight = CGFloat(30)
     
     @IBOutlet weak var scrollView: UIScrollView! {
         didSet {
-            scrollView?.contentSize = CGSize(width: screenSize.width, height: screenSize.height.divided(by: 1.1))
+            scrollView?.contentSize = CGSize(width: screenSize.width, height: screenSize.height / 1.1)
         }
     }
     
@@ -211,7 +211,7 @@ class AddOrEditQuestionViewController: UIViewController, UITextFieldDelegate, UI
         categoryTextField?.tintColor = UIColor.black
         categoryTextField?.returnKeyType = UIReturnKeyType.done
         
-        subjectTextField = UITextField(frame: CGRect(x: x, y: y.multiplied(by: 4), width: textFieldSizeWidth, height: textFieldSizeHeight))
+        subjectTextField = UITextField(frame: CGRect(x: x, y: y * 4, width: textFieldSizeWidth, height: textFieldSizeHeight))
         subjectTextField?.borderStyle = UITextBorderStyle.roundedRect
         subjectTextField?.keyboardType = .asciiCapable
         subjectTextField?.placeholder = "Przedmiot"
@@ -219,7 +219,7 @@ class AddOrEditQuestionViewController: UIViewController, UITextFieldDelegate, UI
         subjectTextField?.textColor = UIColor.black
         subjectTextField?.tintColor = UIColor.black
         
-        pointsTextField = UITextField(frame: CGRect(x: x, y: y.multiplied(by: 7), width: textFieldSizeWidth, height: textFieldSizeHeight))
+        pointsTextField = UITextField(frame: CGRect(x: x, y: y * 7, width: textFieldSizeWidth, height: textFieldSizeHeight))
         pointsTextField?.borderStyle = UITextBorderStyle.roundedRect
         pointsTextField?.keyboardType = .decimalPad
         pointsTextField?.placeholder = "Punkty"
@@ -227,7 +227,7 @@ class AddOrEditQuestionViewController: UIViewController, UITextFieldDelegate, UI
         pointsTextField?.textColor = UIColor.black
         pointsTextField?.tintColor = UIColor.black
         
-        questionContentTextField = UITextField(frame: CGRect(x: x, y: y.multiplied(by: 11), width: screenSize.width.divided(by: 1.12), height: textFieldSizeHeight.multiplied(by: 2)))
+        questionContentTextField = UITextField(frame: CGRect(x: x, y: y * 11, width: screenSize.width / 1.12, height: textFieldSizeHeight * 2))
         questionContentTextField?.borderStyle = UITextBorderStyle.roundedRect
         questionContentTextField?.keyboardType = .asciiCapable
         questionContentTextField?.placeholder = "Treść pytania"
@@ -235,7 +235,7 @@ class AddOrEditQuestionViewController: UIViewController, UITextFieldDelegate, UI
         questionContentTextField?.textColor = UIColor.black
         questionContentTextField?.tintColor = UIColor.black
         
-        showAddAnswerButton(x: x, y: y.multiplied(by: 16))
+        showAddAnswerButton(x: x, y: y * 16)
         
         scrollView.addSubview(categoryTextField!)
         scrollView.addSubview(subjectTextField!)
@@ -250,7 +250,7 @@ class AddOrEditQuestionViewController: UIViewController, UITextFieldDelegate, UI
         rescaleTableView(tableView: tableViewForCategory!, number: 0)
         tableViewForCategory?.backgroundColor = UIColor.white
         
-        tableViewForSubject = UITableView(frame: CGRect(x: x, y: y.multiplied(by: 4) + textFieldSizeHeight, width: textFieldSizeWidth, height: textFieldSizeHeight))
+        tableViewForSubject = UITableView(frame: CGRect(x: x, y: y * 4 + textFieldSizeHeight, width: textFieldSizeWidth, height: textFieldSizeHeight))
         tableViewForSubject?.delegate = self
         tableViewForSubject?.dataSource = self
         tableViewForSubject?.register(UITableViewCell.self, forCellReuseIdentifier: "cellForCategory")
@@ -266,7 +266,7 @@ class AddOrEditQuestionViewController: UIViewController, UITextFieldDelegate, UI
         if addAnswerButton != nil {
             addAnswerButton?.removeFromSuperview()
         }
-        addAnswerButton = UIButton(frame: CGRect(x: x, y: y, width: screenSize.width.divided(by: 1.12), height: CGFloat(30)))
+        addAnswerButton = UIButton(frame: CGRect(x: x, y: y, width: screenSize.width / 1.12, height: CGFloat(30)))
         addAnswerButton?.setTitle("➕   Dodaj odpowiedź", for: UIControlState.normal)
         addAnswerButton?.setTitleColor(UIColor.black, for: UIControlState.normal)
         addAnswerButton?.backgroundColor = UIColor.clear
@@ -279,7 +279,7 @@ class AddOrEditQuestionViewController: UIViewController, UITextFieldDelegate, UI
         if removeAnswerButton != nil {
             removeAnswerButton?.removeFromSuperview()
         }
-        removeAnswerButton = UIButton(frame: CGRect(x: x, y: y, width: screenSize.width.divided(by: 1.12), height: CGFloat(30)))
+        removeAnswerButton = UIButton(frame: CGRect(x: x, y: y, width: screenSize.width / 1.12, height: CGFloat(30)))
         removeAnswerButton?.setTitle("➖   Usuń odpowiedź", for: UIControlState.normal)
         removeAnswerButton?.setTitleColor(UIColor.black, for: UIControlState.normal)
         removeAnswerButton?.backgroundColor = UIColor.clear
@@ -301,7 +301,7 @@ class AddOrEditQuestionViewController: UIViewController, UITextFieldDelegate, UI
     }
     
     private func addFirstAndSecondQuestionElements(x: CGFloat, y: CGFloat) {
-        firstAnswerTextField = UITextField(frame: CGRect(x: x, y: y.multiplied(by: 16), width: screenSize.width.divided(by: 1.12), height: CGFloat(60)))
+        firstAnswerTextField = UITextField(frame: CGRect(x: x, y: y / 16, width: screenSize.width / 1.12, height: CGFloat(60)))
         firstAnswerTextField?.borderStyle = UITextBorderStyle.roundedRect
         firstAnswerTextField?.keyboardType = .asciiCapable
         firstAnswerTextField?.placeholder = "Treść pierwszej odpowiedzi"
@@ -309,10 +309,10 @@ class AddOrEditQuestionViewController: UIViewController, UITextFieldDelegate, UI
         firstAnswerTextField?.textColor = UIColor.black
         firstAnswerTextField?.tintColor = UIColor.black
         firstAnswerTextField?.delegate = self
-        firstAnswerSwitch = UISwitch(frame: CGRect(x: x, y: y.multiplied(by: 20), width: 49, height: 31))
+        firstAnswerSwitch = UISwitch(frame: CGRect(x: x, y: y * 20, width: 49, height: 31))
         firstAnswerSwitch?.isOn = false
         
-        secondAnswerTextField = UITextField(frame: CGRect(x: x, y: y.multiplied(by: 22), width: screenSize.width.divided(by: 1.12), height: CGFloat(60)))
+        secondAnswerTextField = UITextField(frame: CGRect(x: x, y: y * 22, width: screenSize.width / 1.12, height: CGFloat(60)))
         secondAnswerTextField?.borderStyle = UITextBorderStyle.roundedRect
         secondAnswerTextField?.keyboardType = .asciiCapable
         secondAnswerTextField?.placeholder = "Treść drugiej odpowiedzi"
@@ -320,11 +320,11 @@ class AddOrEditQuestionViewController: UIViewController, UITextFieldDelegate, UI
         secondAnswerTextField?.textColor = UIColor.black
         secondAnswerTextField?.tintColor = UIColor.black
         secondAnswerTextField?.delegate = self
-        secondAnswerSwitch = UISwitch(frame: CGRect(x: x, y: y.multiplied(by: 26), width: 49, height: 31))
+        secondAnswerSwitch = UISwitch(frame: CGRect(x: x, y: y * 26, width: 49, height: 31))
         secondAnswerSwitch?.isOn = false
         
-        showRemoveAnswerButton(x: x, y: y.multiplied(by: 29))
-        showAddAnswerButton(x: x, y: y.multiplied(by: 32))
+        showRemoveAnswerButton(x: x, y: y * 29)
+        showAddAnswerButton(x: x, y: y * 32)
         scrollView.addSubview(firstAnswerTextField!)
         scrollView.addSubview(secondAnswerTextField!)
         scrollView.addSubview(firstAnswerSwitch!)
@@ -332,7 +332,7 @@ class AddOrEditQuestionViewController: UIViewController, UITextFieldDelegate, UI
     }
     
     private func addThirdQuestionElements(x: CGFloat, y: CGFloat) {
-        thirdAnswerTextField = UITextField(frame: CGRect(x: x, y: y.multiplied(by: 28), width: screenSize.width.divided(by: 1.12), height: CGFloat(60)))
+        thirdAnswerTextField = UITextField(frame: CGRect(x: x, y: y * 28, width: screenSize.width / 1.12, height: CGFloat(60)))
         thirdAnswerTextField?.borderStyle = UITextBorderStyle.roundedRect
         thirdAnswerTextField?.keyboardType = .asciiCapable
         thirdAnswerTextField?.placeholder = "Treść trzeciej odpowiedzi"
@@ -340,18 +340,18 @@ class AddOrEditQuestionViewController: UIViewController, UITextFieldDelegate, UI
         thirdAnswerTextField?.textColor = UIColor.black
         thirdAnswerTextField?.tintColor = UIColor.black
         thirdAnswerTextField?.delegate = self
-        thirdAnswerSwitch = UISwitch(frame: CGRect(x: x, y: y.multiplied(by: 32), width: 49, height: 31))
+        thirdAnswerSwitch = UISwitch(frame: CGRect(x: x, y: y * 32, width: 49, height: 31))
         thirdAnswerSwitch?.isOn = false
         
         scrollView?.contentSize.height *= CGFloat(1.15)
-        showRemoveAnswerButton(x: x, y: y.multiplied(by: 35))
-        showAddAnswerButton(x: x, y: y.multiplied(by: 38))
+        showRemoveAnswerButton(x: x, y: y * 35)
+        showAddAnswerButton(x: x, y: y * 38)
         scrollView.addSubview(thirdAnswerTextField!)
         scrollView.addSubview(thirdAnswerSwitch!)
     }
     
     private func addFourthQuestionElements(x: CGFloat, y: CGFloat) {
-        fourthAnswerTextField = UITextField(frame: CGRect(x: x, y: y.multiplied(by: 34), width: screenSize.width.divided(by: 1.12), height: CGFloat(60)))
+        fourthAnswerTextField = UITextField(frame: CGRect(x: x, y: y * 34, width: screenSize.width / 1.12, height: CGFloat(60)))
         fourthAnswerTextField?.borderStyle = UITextBorderStyle.roundedRect
         fourthAnswerTextField?.keyboardType = .asciiCapable
         fourthAnswerTextField?.placeholder = "Treść czwartej odpowiedzi"
@@ -359,12 +359,12 @@ class AddOrEditQuestionViewController: UIViewController, UITextFieldDelegate, UI
         fourthAnswerTextField?.textColor = UIColor.black
         fourthAnswerTextField?.tintColor = UIColor.black
         fourthAnswerTextField?.delegate = self
-        fourthAnswerSwitch = UISwitch(frame: CGRect(x: x, y: y.multiplied(by: 38), width: 49, height: 31))
+        fourthAnswerSwitch = UISwitch(frame: CGRect(x: x, y: y * 38, width: 49, height: 31))
         fourthAnswerSwitch?.isOn = false
         
         scrollView?.contentSize.height *= CGFloat(1.15)
-        showRemoveAnswerButton(x: x, y: y.multiplied(by: 41))
-        showAddAnswerButton(x: x, y: y.multiplied(by: 44))
+        showRemoveAnswerButton(x: x, y: y * 41)
+        showAddAnswerButton(x: x, y: y * 44)
         scrollView.addSubview(fourthAnswerTextField!)
         scrollView.addSubview(fourthAnswerSwitch!)
     }
@@ -375,16 +375,16 @@ class AddOrEditQuestionViewController: UIViewController, UITextFieldDelegate, UI
             fourthAnswerTextField = nil
             fourthAnswerSwitch?.removeFromSuperview()
             fourthAnswerSwitch = nil
-            showRemoveAnswerButton(x: x, y: y.multiplied(by: 35))
-            showAddAnswerButton(x: x, y: y.multiplied(by: 38))
+            showRemoveAnswerButton(x: x, y: y * 35)
+            showAddAnswerButton(x: x, y: y * 38)
             scrollView?.contentSize.height /= CGFloat(1.15)
         } else if thirdAnswerTextField != nil {
             thirdAnswerTextField?.removeFromSuperview()
             thirdAnswerTextField = nil
             thirdAnswerSwitch?.removeFromSuperview()
             thirdAnswerSwitch = nil
-            showRemoveAnswerButton(x: x, y: y.multiplied(by: 29))
-            showAddAnswerButton(x: x, y: y.multiplied(by: 32))
+            showRemoveAnswerButton(x: x, y: y * 29)
+            showAddAnswerButton(x: x, y: y * 32)
             scrollView?.contentSize.height /= CGFloat(1.15)
         } else if secondAnswerTextField != nil && firstAnswerTextField != nil {
             firstAnswerTextField?.removeFromSuperview()
@@ -395,7 +395,7 @@ class AddOrEditQuestionViewController: UIViewController, UITextFieldDelegate, UI
             firstAnswerSwitch = nil
             secondAnswerSwitch?.removeFromSuperview()
             secondAnswerSwitch = nil
-            showAddAnswerButton(x: x, y: y.multiplied(by: 16))
+            showAddAnswerButton(x: x, y: y * 16)
             //scrollView?.contentSize.height /= CGFloat(1.15)
             removeAnswerButton?.removeFromSuperview()
         }
@@ -500,9 +500,9 @@ class AddOrEditQuestionViewController: UIViewController, UITextFieldDelegate, UI
     
     private func rescaleTableView(tableView: UITableView, number: Int) {
         if tableView == tableViewForCategory {
-            tableViewForCategory?.frame.size.height = CGFloat(number).multiplied(by: 30)
+            tableViewForCategory?.frame.size.height = CGFloat(number) * 30
         } else if tableView == tableViewForSubject {
-            tableViewForSubject?.frame.size.height = CGFloat(number).multiplied(by: 30)
+            tableViewForSubject?.frame.size.height = CGFloat(number) * 30
         }
     }
     

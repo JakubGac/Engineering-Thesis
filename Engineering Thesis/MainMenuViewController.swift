@@ -11,7 +11,6 @@ import RealmSwift
 
 class MainMenuViewController: UIViewController {
 
-    
     @IBOutlet weak var teacherButton: UIButton!
     @IBOutlet weak var studentButton: UIButton!
     

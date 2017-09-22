@@ -146,7 +146,7 @@ class QuestionDao {
 
     // pobranie ID ostatniego pytania
     func getLastQuestionID() -> Int {
-        return Int(realm.objects(Question.self).count.toIntMax())
+        return Int(realm.objects(Question.self).endIndex)
     }
     
     // pobranie wszystkich pytań

@@ -11,10 +11,6 @@
 		270241781E2028010043CBC3 /* NewTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270241771E2028010043CBC3 /* NewTestViewController.swift */; };
 		2702417A1E202A0C0043CBC3 /* AddNewTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270241791E202A0C0043CBC3 /* AddNewTestViewController.swift */; };
 		2702417C1E203C4E0043CBC3 /* PickQuestionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2702417B1E203C4E0043CBC3 /* PickQuestionTableViewController.swift */; };
-		2703856B1DE4E632009D6540 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270385691DE4E632009D6540 /* Realm.framework */; };
-		2703856C1DE4E632009D6540 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 270385691DE4E632009D6540 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2703856D1DE4E632009D6540 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2703856A1DE4E632009D6540 /* RealmSwift.framework */; };
-		2703856E1DE4E632009D6540 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2703856A1DE4E632009D6540 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		270385701DE4E668009D6540 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2703856F1DE4E668009D6540 /* Question.swift */; };
 		270385751DE4FA70009D6540 /* DaoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270385741DE4FA70009D6540 /* DaoManager.swift */; };
 		270385791DE78E0E009D6540 /* ExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270385781DE78E0E009D6540 /* ExamViewController.swift */; };
@@ -36,6 +32,10 @@
 		2776B5AE1E2AE3BF00FB34C1 /* TestDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776B5AD1E2AE3BF00FB34C1 /* TestDao.swift */; };
 		2776B5B51E2AE60E00FB34C1 /* QuestionDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776B5B41E2AE60E00FB34C1 /* QuestionDao.swift */; };
 		2792FCD01E12F78100748BF7 /* ShowQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2792FCCF1E12F78100748BF7 /* ShowQuestionViewController.swift */; };
+		279E84711F7561B4008E6DDD /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 279E84701F7561B4008E6DDD /* Realm.framework */; };
+		279E84721F7561B4008E6DDD /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 279E84701F7561B4008E6DDD /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		279E84741F7561B8008E6DDD /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 279E84731F7561B8008E6DDD /* RealmSwift.framework */; };
+		279E84751F7561B8008E6DDD /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 279E84731F7561B8008E6DDD /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		279F0C3E1E32D9E20063DD0E /* TestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279F0C3D1E32D9E20063DD0E /* TestsTableViewController.swift */; };
 		27A4FCBA1E2662F40026FAAF /* ExamTestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4FCB91E2662F40026FAAF /* ExamTestsViewController.swift */; };
 		27A4FCBC1E2664320026FAAF /* ExamTestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4FCBB1E2664320026FAAF /* ExamTestsTableViewController.swift */; };
@@ -62,14 +62,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		272211DA1DE4E4DB003B2266 /* Embed Frameworks */ = {
+		279E846C1F754F46008E6DDD /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2703856E1DE4E632009D6540 /* RealmSwift.framework in Embed Frameworks */,
-				2703856C1DE4E632009D6540 /* Realm.framework in Embed Frameworks */,
+				279E84751F7561B8008E6DDD /* RealmSwift.framework in Embed Frameworks */,
+				279E84721F7561B4008E6DDD /* Realm.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,8 +81,6 @@
 		270241771E2028010043CBC3 /* NewTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTestViewController.swift; sourceTree = "<group>"; };
 		270241791E202A0C0043CBC3 /* AddNewTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewTestViewController.swift; sourceTree = "<group>"; };
 		2702417B1E203C4E0043CBC3 /* PickQuestionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickQuestionTableViewController.swift; sourceTree = "<group>"; };
-		270385691DE4E632009D6540 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
-		2703856A1DE4E632009D6540 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		2703856F1DE4E668009D6540 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		270385741DE4FA70009D6540 /* DaoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaoManager.swift; sourceTree = "<group>"; };
 		270385781DE78E0E009D6540 /* ExamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +102,8 @@
 		2776B5AD1E2AE3BF00FB34C1 /* TestDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDao.swift; sourceTree = "<group>"; };
 		2776B5B41E2AE60E00FB34C1 /* QuestionDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionDao.swift; sourceTree = "<group>"; };
 		2792FCCF1E12F78100748BF7 /* ShowQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowQuestionViewController.swift; sourceTree = "<group>"; };
+		279E84701F7561B4008E6DDD /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		279E84731F7561B8008E6DDD /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		279F0C3D1E32D9E20063DD0E /* TestsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestsTableViewController.swift; sourceTree = "<group>"; };
 		27A4FCB91E2662F40026FAAF /* ExamTestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamTestsViewController.swift; sourceTree = "<group>"; };
 		27A4FCBB1E2664320026FAAF /* ExamTestsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamTestsTableViewController.swift; sourceTree = "<group>"; };
@@ -141,8 +141,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2703856D1DE4E632009D6540 /* RealmSwift.framework in Frameworks */,
-				2703856B1DE4E632009D6540 /* Realm.framework in Frameworks */,
+				279E84741F7561B8008E6DDD /* RealmSwift.framework in Frameworks */,
+				279E84711F7561B4008E6DDD /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,8 +251,8 @@
 		27E459C51DDDC56B006099F4 = {
 			isa = PBXGroup;
 			children = (
-				270385691DE4E632009D6540 /* Realm.framework */,
-				2703856A1DE4E632009D6540 /* RealmSwift.framework */,
+				279E84731F7561B8008E6DDD /* RealmSwift.framework */,
+				279E84701F7561B4008E6DDD /* Realm.framework */,
 				27E459D01DDDC56C006099F4 /* Engineering Thesis */,
 				27E459CF1DDDC56C006099F4 /* Products */,
 			);
@@ -374,8 +374,8 @@
 				27E459CA1DDDC56B006099F4 /* Sources */,
 				27E459CB1DDDC56B006099F4 /* Frameworks */,
 				27E459CC1DDDC56B006099F4 /* Resources */,
-				272211DA1DE4E4DB003B2266 /* Embed Frameworks */,
-				270385711DE4E9AB009D6540 /* ShellScript */,
+				279E846C1F754F46008E6DDD /* Embed Frameworks */,
+				27F4332E1F7562120064D245 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -435,7 +435,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		270385711DE4E9AB009D6540 /* ShellScript */ = {
+		27F4332E1F7562120064D245 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -618,19 +618,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KAE5HV8HDG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Engineering Thesis/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JakubGac.ET;
+				PRODUCT_BUNDLE_IDENTIFIER = JakubGac.ET2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Engineering Thesis/Engineering Thesis-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -640,18 +640,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KAE5HV8HDG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Engineering Thesis/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JakubGac.ET;
+				PRODUCT_BUNDLE_IDENTIFIER = JakubGac.ET2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Engineering Thesis/Engineering Thesis-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

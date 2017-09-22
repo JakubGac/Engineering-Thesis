@@ -10,16 +10,16 @@ import Foundation
 import RealmSwift
 
 class Question: Object {
-    dynamic var id = 0
-    dynamic var content = ""
-    dynamic var subject = ""
-    dynamic var category = ""
-    dynamic var isOpen = false
-    dynamic var numberOfPoints = 0.0
+    @objc dynamic var id = 0
+    @objc dynamic var content = ""
+    @objc dynamic var subject = ""
+    @objc dynamic var category = ""
+    @objc dynamic var isOpen = false
+    @objc dynamic var numberOfPoints = 0.0
     var answers = List<Answer>()
 }
 
 class Answer: Object {
-    dynamic var content = ""
-    dynamic var isCorrect = false
+    @objc dynamic var content = ""
+    @objc dynamic var isCorrect = false
 }
